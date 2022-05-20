@@ -33,3 +33,11 @@ Set new country
 ```
 iw reg set JP
 ```
+
+# Discover APs using bettercap
+```
+bettercap
+set wifi.interface wlan0mon
+wifi.recon on
+wifi.show
+```
