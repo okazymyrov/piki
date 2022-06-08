@@ -1,5 +1,7 @@
 # ρεnετraτion τεsτing ωiκi
 
+- Solutions
+  - [Active Directory](https://github.com/okazymyrov/piki/blob/master/AD.md)
 - Protocols
   - [SNMP](https://github.com/okazymyrov/piki/blob/master/SNMP.md)
 - Wireless
