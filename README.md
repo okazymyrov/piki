@@ -10,3 +10,7 @@
   - [bettercap](https://github.com/okazymyrov/piki/blob/master/bettercap.md)
 - Auxiliary
   - [CyberChef recipes](https://github.com/okazymyrov/piki/blob/master/CyberChef.md)
+- Reconnaissance
+  - [Reconnaissance](https://github.com/okazymyrov/piki/blob/master/Reconnaissance.md)
+- Exfiltration
+  - [Data Exfiltration](https://github.com/okazymyrov/piki/blob/master/DataExfiltration.md)
