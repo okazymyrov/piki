@@ -1,6 +1,6 @@
 # Trust
 ## CMD
-```console
+```batchfile
 nltest /trusted_domains
 ```
 ## PowerShell
@@ -13,8 +13,14 @@ nltest /trusted_domains
 ([System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest()).GetAllTrustRelationships()
 ```
 
-
 # LDAP
+
+## Find LDAP servers
+```batchfile
+nltest /dclist:<domain>
+nslookup -type=srv _ldap._tcp.dc._msdcs.<domain>
+```
+
 ## Connection to a LDAP server with custom credentials 
 ```powershell
 $ip=<ip of a DC>
