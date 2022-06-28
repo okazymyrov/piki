@@ -23,3 +23,5 @@
   - [Azure](https://github.com/okazymyrov/piki/blob/master/Azure.md)
 - Payload Ddelivery
   - [Servers](https://github.com/okazymyrov/piki/blob/master/servers.md)
+- References
+  - [Cobalt Strike Red Team Ops - Training Course](https://www.youtube.com/playlist?list=PLcjpg2ik7YT6H5l9Jx-1ooRYpfvznAInJ)
