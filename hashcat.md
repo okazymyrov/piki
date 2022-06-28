@@ -1,4 +1,4 @@
-# Password dictioaries
+# Dictioaries
 - https://weakpass.com/
 
 # Crack NTLMv2
