@@ -17,3 +17,5 @@
   - [Data Exfiltration](https://github.com/okazymyrov/piki/blob/master/DataExfiltration.md)
 - Privilege Escalation  
   - [Privilege Escalation](https://github.com/okazymyrov/piki/blob/master/PrivilegeEscalation.md)
+- Cracking
+  - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
