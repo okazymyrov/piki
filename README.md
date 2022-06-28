@@ -21,3 +21,5 @@
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
 - Azure
   - [Azure](https://github.com/okazymyrov/piki/blob/master/Azure.md)
+- Payload Ddelivery
+  - [Servers](https://github.com/okazymyrov/piki/blob/master/servers.md)
