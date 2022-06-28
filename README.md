@@ -14,3 +14,5 @@
   - [Reconnaissance](https://github.com/okazymyrov/piki/blob/master/Reconnaissance.md)
 - Exfiltration
   - [Data Exfiltration](https://github.com/okazymyrov/piki/blob/master/DataExfiltration.md)
+- Privilege Escalation  
+  - [Privilege Escalation](https://github.com/okazymyrov/piki/blob/master/PrivilegeEscalation.md)
