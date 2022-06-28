@@ -1,4 +1,4 @@
-# ρεnετraτion τεsτing ωiκi
+# ρεnτεsτ ωiκi
 
 - Solutions
   - [Active Directory](https://github.com/okazymyrov/piki/blob/master/AD.md)
