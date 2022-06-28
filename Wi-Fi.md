@@ -45,3 +45,12 @@ set wifi.interface wlan0mon
 wifi.recon on
 wifi.show
 ```
+
+# Hijack IP address
+```console
+ip link set wlan0 down
+# macchanger -A <hijacked MAC> wlan0
+ip link set dev wlan0 address <hijacked MAC>
+ip link set wlan0 up
+dhclient wlan0
+```
