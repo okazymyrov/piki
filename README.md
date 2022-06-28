@@ -19,3 +19,5 @@
   - [Privilege Escalation](https://github.com/okazymyrov/piki/blob/master/PrivilegeEscalation.md)
 - Cracking
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
+- Azure
+  - [Azure](https://github.com/okazymyrov/piki/blob/master/azure.md)
