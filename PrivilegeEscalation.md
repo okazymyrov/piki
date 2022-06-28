@@ -1,7 +1,7 @@
 # Unquoted Service Paths
 
 ## WMIC
-```console
+```batchfile
 cmd /c wmic service get name,displayname,pathname,startmode |findstr /i "auto" |findstr /i /v "c:\windows\\" |findstr /i /v """
 ```
 
@@ -13,7 +13,7 @@ if ($result -ne $null) { Write $result | Sort -Unique } else { Write "Weak servi
 ```
 
 ## Specific service
-```console
+```batchfile
 sc qc "<service name>"
 ```
 
