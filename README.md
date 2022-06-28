@@ -9,6 +9,7 @@
 - Tools
   - [bettercap](https://github.com/okazymyrov/piki/blob/master/bettercap.md)
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
+  - [PowerShell](https://github.com/okazymyrov/piki/blob/master/PowerShell.md)
 - Auxiliary
   - [CyberChef recipes](https://github.com/okazymyrov/piki/blob/master/CyberChef.md)
 - Reconnaissance
