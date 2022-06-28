@@ -15,7 +15,14 @@ nltest /trusted_domains
 
 # LDAP
 
+## Find Domain Controllers
+### PowerShell
+```powershell
+([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).DomainControlles
+```
+
 ## Find LDAP servers
+
 ```batchfile
 nltest /dclist:<domain>
 nslookup -type=srv _ldap._tcp.dc._msdcs.<domain>
