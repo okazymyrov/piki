@@ -20,4 +20,4 @@
 - Cracking
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
 - Azure
-  - [Azure](https://github.com/okazymyrov/piki/blob/master/azure.md)
+  - [Azure](https://github.com/okazymyrov/piki/blob/master/Azure.md)
