@@ -48,3 +48,21 @@ $searcher.findAll().Properties
 $searcher.filter = "(memberOf:1.2.840.113556.1.4.1941:=cn=Domain Admins,cn=Users,dc=example,dc=com)"
 $searcher.FindAll()
 ```
+
+## Get all Service Principal Names
+```powershell
+$search = New-Object DirectoryServices.DirectorySearcher([ADSI]"")
+$search.filter = "(&(objectCategory=person)(objectClass=user)(servicePrincipalName=*))"
+$results = $search.Findall()
+foreach($result in $results)
+{
+	$userEntry = $result.GetDirectoryEntry()
+	Write-host "User : " $userEntry.name "(" $userEntry.distinguishedName ")"
+	Write-host "SPNs"        
+	foreach($SPN in $userEntry.servicePrincipalName)
+	{
+		$SPN       
+	}
+	Write-host ""
+}
+```
