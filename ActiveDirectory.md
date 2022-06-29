@@ -56,7 +56,7 @@ $searcher.filter = "(memberOf:1.2.840.113556.1.4.1941:=cn=Domain Admins,cn=Users
 $searcher.FindAll()
 ```
 
-## Get all Service Principal Names
+## Get Service Principal Names
 ```powershell
 $search = New-Object DirectoryServices.DirectorySearcher([ADSI]"")
 $search.filter = "(&(objectCategory=person)(objectClass=user)(servicePrincipalName=*))"
@@ -71,5 +71,31 @@ foreach($result in $results)
 		$SPN       
 	}
 	Write-host ""
+}
+```
+
+## Check credentials over LDAP
+```powershell
+# credential format domain\username:password
+$filename = "credentials.txt"
+$ldap = 'LDAP://<ip>'
+
+Get-Content $filename | ForEach-Object {
+	$username = $_.split(":")[0]
+	$password = $_.split(":")[1]
+
+	if ($username[0] -ne "#")
+	{
+		$domain = New-Object System.DirectoryServices.DirectoryEntry($ldap,$username,$password)
+
+		if ($domain.name -eq $null)
+		{
+			write-host "- $username"
+		}
+		else
+		{
+			write-host "+ $username"
+		}
+	}
 }
 ```
