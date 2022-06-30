@@ -1,7 +1,7 @@
 # ρεnτεsτ ωiκi
 
 - Solutions
-  - [Active Directory](https://github.com/okazymyrov/piki/blob/master/AD.md)
+  - [Active Directory](https://github.com/okazymyrov/piki/blob/master/ActiveDirectory.md)
 - Protocols
   - [SNMP](https://github.com/okazymyrov/piki/blob/master/SNMP.md)
 - Wireless
