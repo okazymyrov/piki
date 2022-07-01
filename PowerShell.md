@@ -8,7 +8,7 @@
 iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/microsoft/ExPerfAnalyzer/main/ExPerfAnalyzer.ps1')
 ```
 
-# Download a script from an HTTP server
+# Test on open/close port
 ```powershell
 Test-NetConnection -Port 389 -InformationLevel "Detailed" <ip> 
 ```
