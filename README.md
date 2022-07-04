@@ -29,3 +29,5 @@
   - [Cobalt Strike Red Team Ops - Training Course](https://www.youtube.com/playlist?list=PLcjpg2ik7YT6H5l9Jx-1ooRYpfvznAInJ)
 - Evasion
   - [Amsi-Bypass-Powershell](https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell#Patching-amsi.dll-AmsiScanBuffer-by-rasta-mouse)
+- Vulnerabilities
+  - [OneDrive for Business: Bypass restriction of "Anyone with the link"](https://github.com/okazymyrov/piki/blob/master/vulnerabilities.md)
