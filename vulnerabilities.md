@@ -1,4 +1,4 @@
-# OneDrive for Business: Bypass restriction of "Anyone with the link"
+# OneDrive for Business: Bypass "Anyone with the link" restriction
 
 Answer from Microsoft (MSRC Case 72610 CRM:0022004898):
 > We determined that a specific fix will not be released for the reported behavior.
