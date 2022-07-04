@@ -30,4 +30,4 @@
 - Evasion
   - [Amsi-Bypass-Powershell](https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell#Patching-amsi.dll-AmsiScanBuffer-by-rasta-mouse)
 - Vulnerabilities
-  - [OneDrive for Business: Bypass restriction of "Anyone with the link"](https://github.com/okazymyrov/piki/blob/master/vulnerabilities.md)
+  - [OneDrive for Business: Bypass restriction of "Anyone with the link"](https://github.com/okazymyrov/piki/blob/master/vulnerabilities.md#onedrive-for-business-bypass-restriction-of-anyone-with-the-link)
