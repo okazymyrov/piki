@@ -46,7 +46,7 @@ wifi.recon on
 wifi.show
 ```
 
-# Hijack IP address
+# Hijack an IP address with a MAC address
 ```console
 ip link set wlan0 down
 # macchanger -A <hijacked MAC> wlan0
