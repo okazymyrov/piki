@@ -1,7 +1,13 @@
 # Dictioaries
 - https://weakpass.com/
 
-# Crack NTLMv2
+# NTLMv2
 ```console
-hashcat -m5600 <oath to hashes> /usr/share/wordlists/rockyou.txt 
+hashcat -m5600 <path to hashes> /usr/share/wordlists/rockyou.txt 
 ```
+
+# Kerberoasting
+```console
+hashcat -m13100 <path to hashes> /usr/share/wordlists/rockyou.txt
+```
+
