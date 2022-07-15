@@ -94,3 +94,9 @@ $Encrypted | Out-File -FilePath "C:\calc.exe.encrypted"
 ```powershell
 
 ```
+
+# How to grep in PowerShell 
+```powershell
+Select-String -Path "*.log" -Pattern "EMAIL_ADDRESS"
+```
+- [How to Use PowerShell Grep (Select-String)](https://adamtheautomator.com/powershell-grep/)
