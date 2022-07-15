@@ -51,8 +51,7 @@ $Patch = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
 
 
 # Payload encryption/decryption
-## Alternative 1
-### Encryption
+## Encryption
 ```powershell
 $File="C:\Windows\System32\calc.exe"
 $Password="LCSE39VzqmSL8fqE"
@@ -67,32 +66,21 @@ $Encrypted = ConvertFrom-SecureString -SecureString $SecureStringData -SecureKey
 
 $Encrypted | Out-File -FilePath "C:\calc.exe.encrypted"
 ```
-### Decryption
+## Decryption
 ```powershell
+$File = "C:\calc.exe.encrypted"
+$Password = "LCSE39VzqmSL8fqE"
 
-```
+$EncryptedData = Get-Content -Encoding unicode -Path $File -Raw
 
-## Alternative 2
-### Encryption
-```powershell
-$File="C:\Windows\System32\calc.exe"
-$Password="LCSE39VzqmSL8fqE"
+$SecureStringPwd = ConvertTo-SecureString $Password -AsPlainText -Force
+$SecureStringData = ConvertTo-SecureString -String $EncryptedData -SecureKey $SecureStringPwd
 
-[Byte[]]$Bytes = [System.IO.File]::ReadAllBytes($File)
-$B64String = [String][Convert]::ToBase64String($Bytes)
 
-$SecureStringData = ConvertTo-SecureString $B64String -AsPlainText -Force
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecureStringData)
+$UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
-$AESKey = New-Object Byte[] 32
-[Security.Cryptography.RNGCryptoServiceProvider]::Create().GetBytes($AESKey)
-$Encrypted = ConvertFrom-SecureString -SecureString $SecureStringData -key $AESKey
-
-$Encrypted | Out-File -FilePath "C:\calc.exe.encrypted"
-[String][Convert]::ToBase64String($AESKey)
-```
-### Decryption
-```powershell
-
+Set-Content -Encoding byte -Path "C:\calc.exe" -Value $EncryptedData
 ```
 
 # How to grep in PowerShell 
