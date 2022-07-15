@@ -51,36 +51,42 @@ $Patch = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
 
 
 # Payload encryption/decryption
-## Encryption
+## Encryption (WIP)
 ```powershell
 $File="C:\Windows\System32\calc.exe"
-$Password="LCSE39VzqmSL8fqE"
+#$Password = "LCSE39VzqmSL8fqE"
 
-[Byte[]]$Bytes = [System.IO.File]::ReadAllBytes($File)
-$B64String = [String][Convert]::ToBase64String($Bytes)
+#$SecureStringPwd = ConvertTo-SecureString $Password -AsPlainText -Force
 
-$SecureStringData = ConvertTo-SecureString $B64String -AsPlainText -Force
-$SecureStringPwd = ConvertTo-SecureString $Password -AsPlainText -Force
+$RawBytes = Get-Content -Path $File -Encoding byte -Raw
+#$B64RawBytes = [String][Convert]::ToBase64String($RawBytes)
+#$SecureStringB64RawBytes = ConvertTo-SecureString $B64RawBytes -AsPlainText -Force
 
-$Encrypted = ConvertFrom-SecureString -SecureString $SecureStringData -SecureKey $SecureStringPwd
+#$EncryptedRawBytes = ConvertFrom-SecureString -SecureString $SecureStringB64RawBytes -SecureKey $SecureStringPwd
 
-$Encrypted | Out-File -FilePath "C:\calc.exe.encrypted"
+# Set-Content -Encoding byte -Path "C:\calc.exe.encrypted" -Value $SecureStringB64RawBytes
+
+$BinaryWriter = [System.IO.BinaryWriter]::new([System.IO.File]::Create("C:\calc.exe.encrypted"))
+$BinaryWriter.Write($RawBytes)
+$BinaryWriter.Close()
 ```
-## Decryption
+## Decryption (WIP)
 ```powershell
 $File = "C:\calc.exe.encrypted"
-$Password = "LCSE39VzqmSL8fqE"
+# $Password = "LCSE39VzqmSL8fqE"
+# $SecureStringPwd = ConvertTo-SecureString $Password -AsPlainText -Force
 
-$EncryptedData = Get-Content -Encoding unicode -Path $File -Raw
+$EncryptedRawBytes = Get-Content -Path $File -Encoding byte -Raw
+# $SecureStringData = ConvertTo-SecureString -String $EncryptedData -SecureKey $SecureStringPwd
 
-$SecureStringPwd = ConvertTo-SecureString $Password -AsPlainText -Force
-$SecureStringData = ConvertTo-SecureString -String $EncryptedData -SecureKey $SecureStringPwd
+# $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecureStringData)
+# $UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
+# Set-Content -Encoding byte -Path "C:\calc.exe" -Value $EncryptedData
 
-$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecureStringData)
-$UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
-
-Set-Content -Encoding byte -Path "C:\calc.exe" -Value $EncryptedData
+$BinaryWriter = [System.IO.BinaryWriter]::new([System.IO.File]::Create("C:\calc.exe"))
+$BinaryWriter.Write($EncryptedRawBytes)
+$BinaryWriter.Close()
 ```
 
 # How to grep in PowerShell 
