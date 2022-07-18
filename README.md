@@ -12,6 +12,7 @@
   - [PowerShell](https://github.com/okazymyrov/piki/blob/master/PowerShell.md)
   - [BloodHound](https://github.com/okazymyrov/piki/blob/master/BloodHound.md)
   - [Rubeus](https://github.com/okazymyrov/piki/blob/master/Rubeus.md)
+  - [CeWL](https://github.com/okazymyrov/piki/blob/master/cewl.md)
 - Auxiliary
   - [CyberChef recipes](https://github.com/okazymyrov/piki/blob/master/CyberChef.md)
 - Reconnaissance
