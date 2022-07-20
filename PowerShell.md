@@ -1,4 +1,4 @@
-# In case of issues with TLS
+# Enable support of TLS 1.2
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 ```
