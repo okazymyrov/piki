@@ -70,7 +70,7 @@ $Seed = 42 # seed between 0 and 2147483647
 $Bytes = [io.file]::ReadAllBytes($FileIn) # Get-Content -Path $File -Encoding byte -Raw 
 
 Get-Random -SetSeed $Seed -Maximum 255 -Minimum 0
-for($i=0;$i -lt $RawBytes.Length;$i++)
+for($i=0;$i -lt $Bytes.Length;$i++)
 {
     $Bytes[$i] = $Bytes[$i] -bxor (Get-Random -Maximum 256 -Minimum 0)
 }
@@ -86,7 +86,7 @@ $Seed = 42 # seed between 0 and 2147483647
 $Bytes = [io.file]::ReadAllBytes($FileIn) # Get-Content -Path $File -Encoding byte -Raw 
 
 Get-Random -SetSeed $Seed -Maximum 255 -Minimum 0
-for($i=0;$i -lt $RawBytes.Length;$i++)
+for($i=0;$i -lt $Bytes.Length;$i++)
 {
     $Bytes[$i] = $Bytes[$i] -bxor (Get-Random -Maximum 256 -Minimum 0)
 }
