@@ -1,3 +1,13 @@
+# Table of Contents
+- [Enable support of TLS 1.2](#enable-support-of-tls-12)
+- [Download a script from an HTTP server](#download-a-script-from-an-http-server)
+- [Test on open/close port](#test-on-openclose-port)
+- [Patching amsi.dll AmsiScanBuffer by rasta-mouse](#patching-amsidll-amsiscanbuffer-by-rasta-mouse)
+- [Payload encryption/decryption](#payload-encryptiondecryption)
+  * [Encryption (not secure)](#encryption-not-secure)
+  * [Decryption](#decryption)
+- [How to grep in PowerShell](#how-to-grep-in-powershell)
+
 # Enable support of TLS 1.2
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -51,42 +61,37 @@ $Patch = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
 
 
 # Payload encryption/decryption
-## Encryption (WIP)
+## Encryption (not secure)
 ```powershell
-$File="C:\Windows\System32\calc.exe"
-#$Password = "LCSE39VzqmSL8fqE"
+$FileIn = "C:\Windows\System32\calc.exe"
+$FileOut = "C:\calc.exe.encrypted"
+$Seed = 42 # seed between 0 and 2147483647
 
-#$SecureStringPwd = ConvertTo-SecureString $Password -AsPlainText -Force
+$Bytes = [io.file]::ReadAllBytes($FileIn) # Get-Content -Path $File -Encoding byte -Raw 
 
-$RawBytes = Get-Content -Path $File -Encoding byte -Raw
-#$B64RawBytes = [String][Convert]::ToBase64String($RawBytes)
-#$SecureStringB64RawBytes = ConvertTo-SecureString $B64RawBytes -AsPlainText -Force
+Get-Random -SetSeed $Seed -Maximum 255 -Minimum 0
+for($i=0;$i -lt $RawBytes.Length;$i++)
+{
+    $Bytes[$i] = $Bytes[$i] -bxor (Get-Random -Maximum 256 -Minimum 0)
+}
 
-#$EncryptedRawBytes = ConvertFrom-SecureString -SecureString $SecureStringB64RawBytes -SecureKey $SecureStringPwd
-
-# Set-Content -Encoding byte -Path "C:\calc.exe.encrypted" -Value $SecureStringB64RawBytes
-
-$BinaryWriter = [System.IO.BinaryWriter]::new([System.IO.File]::Create("C:\calc.exe.encrypted"))
-$BinaryWriter.Write($RawBytes)
-$BinaryWriter.Close()
+[io.file]::WriteAllBytes($FileOut,$Bytes)
 ```
-## Decryption (WIP)
+## Decryption
 ```powershell
-$File = "C:\calc.exe.encrypted"
-# $Password = "LCSE39VzqmSL8fqE"
-# $SecureStringPwd = ConvertTo-SecureString $Password -AsPlainText -Force
+$FileIn = "C:\calc.exe.encrypted"
+$FileOut = "C:\calc.exe"
+$Seed = 42 # seed between 0 and 2147483647
 
-$EncryptedRawBytes = Get-Content -Path $File -Encoding byte -Raw
-# $SecureStringData = ConvertTo-SecureString -String $EncryptedData -SecureKey $SecureStringPwd
+$Bytes = [io.file]::ReadAllBytes($FileIn) # Get-Content -Path $File -Encoding byte -Raw 
 
-# $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecureStringData)
-# $UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+Get-Random -SetSeed $Seed -Maximum 255 -Minimum 0
+for($i=0;$i -lt $RawBytes.Length;$i++)
+{
+    $Bytes[$i] = $Bytes[$i] -bxor (Get-Random -Maximum 256 -Minimum 0)
+}
 
-# Set-Content -Encoding byte -Path "C:\calc.exe" -Value $EncryptedData
-
-$BinaryWriter = [System.IO.BinaryWriter]::new([System.IO.File]::Create("C:\calc.exe"))
-$BinaryWriter.Write($EncryptedRawBytes)
-$BinaryWriter.Close()
+[io.file]::WriteAllBytes($FileOut,$Bytes)
 ```
 
 # How to grep in PowerShell 
