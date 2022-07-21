@@ -1,5 +1,5 @@
 # NTLM brute force
-```console
+```sh
 # -s: Enable SSL
 # -t: Total number of logins to be tested concurrently
 # -b: Suppress startup banner
