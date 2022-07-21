@@ -1,13 +1,20 @@
 # Dictioaries
 - https://weakpass.com/
-
-# NTLMv2
-```console
-hashcat -m5600 <path to hashes> /usr/share/wordlists/rockyou.txt 
-```
+- [password_cracking_rule](https://github.com/NotSoSecure/password_cracking_rules)
+- [OneRuleToRuleThemAll.rule](https://raw.githubusercontent.com/okazymyrov/piki/master/OneRuleToRuleThemAll.rule)
 
 # Kerberoasting
-```console
-hashcat -m13100 <path to hashes> /usr/share/wordlists/rockyou.txt
+```sh
+hashcat --session=kerb -m13100 -a 0 <path to hashes> /usr/share/wordlists/rockyou.txt
+```
+
+# NTLM
+```sh
+hashcat --session=ntlm -m 1000 -a 0 <path to hashes> /usr/share/wordlists/rockyou.txt -r OneRuleToRuleThemAll.rule
+```
+
+# NTLMv2
+```sh
+hashcat --session=ntlmv2 -m5600 -a 0 <path to hashes> /usr/share/wordlists/rockyou.txt 
 ```
 
