@@ -14,6 +14,7 @@
   - [Rubeus](https://github.com/okazymyrov/piki/blob/master/Rubeus.md)
   - [medusa](https://github.com/okazymyrov/piki/blob/master/medusa.md)
   - [CeWL](https://github.com/okazymyrov/piki/blob/master/cewl.md)
+  - [Responder](https://github.com/okazymyrov/piki/blob/master/responder.md)
 - Auxiliary
   - [CyberChef recipes](https://github.com/okazymyrov/piki/blob/master/CyberChef.md)
 - Reconnaissance
