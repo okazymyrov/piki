@@ -99,3 +99,5 @@ Get-Content $filename | ForEach-Object {
 	}
 }
 ```
+
+# [Kerberos cheatsheet](https://github.com/okazymyrov/piki/blob/master/kerberos_attacks_cheatsheet.md)
