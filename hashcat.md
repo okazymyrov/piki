@@ -10,7 +10,7 @@ hashcat --session=kerb -m13100 -a 0 <path to hashes> /usr/share/wordlists/rockyo
 
 # NTLM
 ```sh
-hashcat --session=ntlm -m 1000 -a 0 <path to hashes> /usr/share/wordlists/rockyou.txt -r OneRuleToRuleThemAll.rule
+hashcat --session=ntlm -m1000 -a 0 <path to hashes> /usr/share/wordlists/rockyou.txt -r OneRuleToRuleThemAll.rule
 ```
 
 # NTLMv2
@@ -18,3 +18,12 @@ hashcat --session=ntlm -m 1000 -a 0 <path to hashes> /usr/share/wordlists/rockyo
 hashcat --session=ntlmv2 -m5600 -a 0 <path to hashes> /usr/share/wordlists/rockyou.txt 
 ```
 
+# Restore a session
+```sh
+hashcat --session=<name> --restore
+```
+
+# Show username, hash and password
+```sh
+hashcat -m1000 <path to hashes> --username --show
+```
