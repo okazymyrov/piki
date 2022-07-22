@@ -100,4 +100,9 @@ Get-Content $filename | ForEach-Object {
 }
 ```
 
+#  Convert password to NTLM
+```sh
+python -c 'import hashlib,binascii; print (binascii.hexlify(hashlib.new("md4", "<password>".encode("utf-16le")).digest()))'
+```
+
 # [Kerberos cheatsheet](https://github.com/okazymyrov/piki/blob/master/kerberos_attacks_cheatsheet.md)
