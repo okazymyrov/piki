@@ -1,7 +1,8 @@
 # Linux
 ## Python + Cloudflared
 ```
-python -m http.server
-./cloudflared tunnel --url http://localhost:8000
+python -m http.server # tab #1
+./cloudflared tunnel --url http://localhost:8000 # tab #1
 ```
+- [Servers](https://github.com/okazymyrov/piki/blob/master/servers.md)
 # Windows
