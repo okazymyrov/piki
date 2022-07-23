@@ -29,7 +29,7 @@
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
 - Azure
   - [Azure](https://github.com/okazymyrov/piki/blob/master/Azure.md)
-- Payload Ddelivery
+- Payload Delivery
   - [Servers](https://github.com/okazymyrov/piki/blob/master/servers.md)
 - Evasion
   - [Amsi-Bypass-Powershell](https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell#Patching-amsi.dll-AmsiScanBuffer-by-rasta-mouse)
