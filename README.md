@@ -25,6 +25,7 @@
 - Privilege Escalation  
   - [Privilege Escalation](https://github.com/okazymyrov/piki/blob/master/PrivilegeEscalation.md)
 - Cracking
+  - [Password audit](https://github.com/okazymyrov/piki/blob/master/PasswordAudit.md)
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
 - Azure
   - [Azure](https://github.com/okazymyrov/piki/blob/master/Azure.md)
