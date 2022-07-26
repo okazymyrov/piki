@@ -99,3 +99,8 @@ for($i=0;$i -lt $Bytes.Length;$i++)
 Select-String -Path "*.log" -Pattern "EMAIL_ADDRESS"
 ```
 - [How to Use PowerShell Grep (Select-String)](https://adamtheautomator.com/powershell-grep/)
+
+# 128-bit password
+```powershell
+New-Guid
+```
