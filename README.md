@@ -16,6 +16,7 @@
   - [medusa](https://github.com/okazymyrov/piki/blob/master/medusa.md)
   - [CeWL](https://github.com/okazymyrov/piki/blob/master/cewl.md)
   - [Responder](https://github.com/okazymyrov/piki/blob/master/responder.md)
+  - [msfvenom](https://github.com/okazymyrov/piki/blob/master/msfvenom.md)
 - Auxiliary
   - [CyberChef recipes](https://github.com/okazymyrov/piki/blob/master/CyberChef.md)
 - Reconnaissance
