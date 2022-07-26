@@ -28,6 +28,11 @@ nltest /dclist:<domain>
 nslookup -type=srv _ldap._tcp.dc._msdcs.<domain>
 ```
 
+## ldapsearch
+```sh
+ldapsearch -LLL -x -H ldap://<ip> -b '' -s base '(objectclass=*)'
+```
+
 ## Connection to a LDAP server with custom credentials 
 ```powershell
 $ip=<ip of a DC>
