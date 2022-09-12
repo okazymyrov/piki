@@ -95,10 +95,17 @@ for($i=0;$i -lt $Bytes.Length;$i++)
 ```
 
 # How to grep in PowerShell 
+
+## Log files in the current directory
 ```powershell
 Select-String -Path "*.log" -Pattern "EMAIL_ADDRESS"
 ```
 - [How to Use PowerShell Grep (Select-String)](https://adamtheautomator.com/powershell-grep/)
+
+## All files recursively
+```powershell
+Get-ChildItem -Recurse | Select-String -Pattern "EMAIL_ADDRESS" -List
+```
 
 # 128-bit password
 ```powershell
