@@ -17,6 +17,8 @@
   - [CeWL](https://github.com/okazymyrov/piki/blob/master/cewl.md)
   - [Responder](https://github.com/okazymyrov/piki/blob/master/responder.md)
   - [msfvenom](https://github.com/okazymyrov/piki/blob/master/msfvenom.md)
+  - [mimikatz](https://github.com/okazymyrov/piki/blob/master/mimikatz.md)
+    - [Invoke-Mimikatz](https://github.com/okazymyrov/piki/blob/master/Invoke-Mimikatz.md)
 - Auxiliary
   - [CyberChef recipes](https://github.com/okazymyrov/piki/blob/master/CyberChef.md)
 - Reconnaissance
