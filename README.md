@@ -19,6 +19,7 @@
   - [msfvenom](https://github.com/okazymyrov/piki/blob/master/msfvenom.md)
   - [mimikatz](https://github.com/okazymyrov/piki/blob/master/mimikatz.md)
     - [Invoke-Mimikatz](https://github.com/okazymyrov/piki/blob/master/Invoke-Mimikatz.md)
+  - [wmic](https://github.com/okazymyrov/piki/blob/master/wmic.md)
 - Auxiliary
   - [CyberChef recipes](https://github.com/okazymyrov/piki/blob/master/CyberChef.md)
 - Reconnaissance
