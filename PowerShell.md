@@ -151,7 +151,15 @@ Select-String -Path "*.log" -Pattern "EMAIL_ADDRESS"
 Get-ChildItem -Recurse | Select-String -Pattern "EMAIL_ADDRESS" -List
 ```
 
-# 128-bit password
+# Generate 128-bit password
 ```powershell
 New-Guid
 ```
+
+# Connect to remote computer via WinRM
+```powershell
+$SecPassword = ConvertTo-SecureString "<password>" -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential("<domain.local>\<user>", $SecPassword)
+New-PSSession -Credential $Cred -ComputerName <computer>.<domain.local>
+```
+
