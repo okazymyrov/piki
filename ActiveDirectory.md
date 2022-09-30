@@ -111,3 +111,9 @@ python -c 'import hashlib,binascii; print (binascii.hexlify(hashlib.new("md4", "
 ```
 
 # [Kerberos cheatsheet](https://github.com/okazymyrov/piki/blob/master/kerberos_attacks_cheatsheet.md)
+
+#  The credentials specified are for remote access only
+```batchfile
+runas /netonly /user:<domain>\<user> cmd.exe
+net view \\<domain>.local\
+```
