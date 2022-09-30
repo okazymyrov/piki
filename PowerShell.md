@@ -174,7 +174,7 @@ $Cred = New-Object System.Management.Automation.PSCredential("<domain.local>\<us
 New-PSSession -Credential $Cred -ComputerName <computer>.<domain.local>
 ```
 
-# Manage Microsoft Defender for Endpoint (require administrative rights)
+# Manage Microsoft Defender for Endpoint
 
 - [Add-MpPreference](https://learn.microsoft.com/en-us/powershell/module/defender/add-mppreference)
 
@@ -183,7 +183,7 @@ New-PSSession -Credential $Cred -ComputerName <computer>.<domain.local>
 powershell -NonInteractive -Command Get-MpPreference
 ```
 
-## Add exclusions
+## Add exclusions (require administrative rights)
 ```powershell
 powershell -NonInteractive -Command Add-MpPreference -ExclusionPath "C:\tmp"
 powershell -NonInteractive -Command Add-MpPreference -ExclusionProcess "java.exe"
