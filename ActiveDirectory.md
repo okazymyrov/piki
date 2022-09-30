@@ -115,5 +115,5 @@ python -c 'import hashlib,binascii; print (binascii.hexlify(hashlib.new("md4", "
 #  The credentials specified are for remote access only
 ```batchfile
 runas /netonly /user:<domain>\<user> cmd.exe
-net view \\<domain>.local\
+net view \\<dc>.<domain.local>\
 ```
