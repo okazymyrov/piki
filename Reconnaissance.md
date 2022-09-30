@@ -9,3 +9,8 @@ cat ./10.x.x.x.8 | grep "Timestamp" | cut -d " " -f 3 | grep -e "\.1$" | sort
 FOR /L %i IN (1,1,254) DO @ping -n 1 -w 20 10.0.0.%i | FIND /i "TTL"
 arp -a
 ```
+
+# Check a user in Microsoft tenant
+```
+https://login.microsoftonline.com/getuserrealm.srf?login=user@<example.com>&xml=1
+```
