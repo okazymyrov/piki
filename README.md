@@ -21,6 +21,7 @@
   - [PowerShell](https://github.com/okazymyrov/piki/blob/master/PowerShell.md)
   - [Responder](https://github.com/okazymyrov/piki/blob/master/responder.md)
   - [Rubeus](https://github.com/okazymyrov/piki/blob/master/Rubeus.md)
+  - [sqlmap](https://github.com/okazymyrov/piki/blob/master/sqlmap.md)
   - [wmic](https://github.com/okazymyrov/piki/blob/master/wmic.md)
   - [xfreerdp](https://github.com/okazymyrov/piki/blob/master/xfreerdp.md)
 - Auxiliary
