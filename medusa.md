@@ -18,5 +18,6 @@ medusa -h "<domain/host>" -s -U <file_with_users> -P <file_with_passwords> -M ht
 
 # Brute force usernames and passwords over FTP
 ```sh
+# -f: Stop scanning host after first valid username/password found.
 medusa -h <ip> -U <path_to_usernames> -P <path_to_passwords> -M ftp -n <port> -e ns -f -t 4
 ```
