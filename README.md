@@ -11,6 +11,7 @@
   - [bettercap](https://github.com/okazymyrov/piki/blob/master/bettercap.md)
   - [BloodHound](https://github.com/okazymyrov/piki/blob/master/BloodHound.md)
   - [CeWL](https://github.com/okazymyrov/piki/blob/master/cewl.md)
+  - [crackmapexec](https://github.com/okazymyrov/piki/blob/master/crackmapexec.md)
   - [gobuster](https://github.com/okazymyrov/piki/blob/master/gobuster.md)
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
   - [hydra](https://github.com/okazymyrov/piki/blob/master/hydra.md)
