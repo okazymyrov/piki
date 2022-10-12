@@ -21,3 +21,9 @@ medusa -h "<domain/host>" -s -U <file_with_users> -P <file_with_passwords> -M ht
 # -f: Stop scanning host after first valid username/password found.
 medusa -h <ip> -U <path_to_usernames> -P <path_to_passwords> -M ftp -n <port> -e ns -f -t 4
 ```
+
+# Brute force usernames and passwords over web forms
+```sh
+# -s: Enable SSL
+medusa -h <ip> -U <path_to_usernames> -P <path_to_passwords> -n <port> -e ns -M web-form -m FORM:"/login.php" -m DENY-SIGNAL:"Incorrect information" -m FORM-DATA:"POST?Username=&Password=&Submit=Login"
+```
