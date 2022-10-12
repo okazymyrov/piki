@@ -149,7 +149,7 @@ for($i=0;$i -lt $Bytes.Length;$i++)
 Invoke-Expression $([System.Text.Encoding]::ASCII.GetString($Bytes))
 ```
 
-# How to grep in PowerShell 
+# Grep in PowerShell 
 
 ## Log files in the current directory
 ```powershell
@@ -162,7 +162,12 @@ Select-String -Path "*.log" -Pattern "EMAIL_ADDRESS"
 Get-ChildItem -Recurse | Select-String -Pattern "EMAIL_ADDRESS" -List
 ```
 
-# Generate 128-bit password
+# Search files based on a pattern
+```powershell
+Get-ChildItem -Path "C:\Users\" -Recurse -File -ErrorAction SilentlyContinue -Include "*.txt"
+```
+
+# Generate a 128-bit password
 ```powershell
 New-Guid
 ```
