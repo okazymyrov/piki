@@ -15,7 +15,7 @@
   - [crackmapexec](https://github.com/okazymyrov/piki/blob/master/crackmapexec.md)
   - [gobuster](https://github.com/okazymyrov/piki/blob/master/gobuster.md)
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
-  - [hydra](https://github.com/okazymyrov/piki/blob/master/hydra.md)
+  - [impacket](https://github.com/okazymyrov/piki/blob/master/impacket.md)
   - [medusa](https://github.com/okazymyrov/piki/blob/master/medusa.md)
   - [Metasploit](https://github.com/okazymyrov/piki/blob/master/metasploit.md)
   - [mimikatz](https://github.com/okazymyrov/piki/blob/master/mimikatz.md)
