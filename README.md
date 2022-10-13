@@ -17,7 +17,7 @@
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
   - [hydra](https://github.com/okazymyrov/piki/blob/master/hydra.md)
   - [medusa](https://github.com/okazymyrov/piki/blob/master/medusa.md)
-  - [Metasploit](https://github.com/okazymyrov/piki/blob/master/Metasploit.md)
+  - [Metasploit](https://github.com/okazymyrov/piki/blob/master/metasploit.md)
   - [mimikatz](https://github.com/okazymyrov/piki/blob/master/mimikatz.md)
     - [Invoke-Mimikatz](https://github.com/okazymyrov/piki/blob/master/Invoke-Mimikatz.md)
   - [msfvenom](https://github.com/okazymyrov/piki/blob/master/msfvenom.md)
