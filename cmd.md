@@ -16,3 +16,8 @@ rmdir /S C:\Windows\Temp\xn--5o8hui\
 ```batchfile
 conhost cmd.exe
 ```
+
+# Find files or directories
+```batchfile
+dir "C:\Users\*.txt" /s
+```
