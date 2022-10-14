@@ -29,6 +29,7 @@
   - [xfreerdp](https://github.com/okazymyrov/piki/blob/master/xfreerdp.md)
 - Auxiliary
   - [CyberChef recipes](https://github.com/okazymyrov/piki/blob/master/CyberChef.md)
+  - [Østers](https://github.com/okazymyrov/piki/blob/master/oysters.md)
 - Reconnaissance
   - [Reconnaissance](https://github.com/okazymyrov/piki/blob/master/Reconnaissance.md)
 - Exfiltration
