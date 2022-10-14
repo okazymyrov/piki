@@ -14,6 +14,11 @@ smbclient //<ip>/<share>
 smbmap -u guest -d workgroup -H <ip>
 ```
 
+## Execute commands over SMB
+```sh
+smbmap -u '<user>' -p '<password>' -H <ip> -x 'command "path" <options>'
+```
+
 ## Recursively download a file share
 ```sh
 smbget --user=guest -R smb://<ip>/<share>/
