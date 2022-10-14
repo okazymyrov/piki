@@ -1,5 +1,5 @@
 # Linux
-## Listen shares
+## List shares
 ```sh
 smbclient -L <ip>
 ```
@@ -17,4 +17,11 @@ smbmap -u guest -d workgroup -H <ip>
 ## Recursively download a file share
 ```sh
 smbget --user=guest -R smb://<ip>/<share>/
+```
+
+# Windows
+
+## List shares
+```batchfile
+net view \\<ip> /all
 ```
