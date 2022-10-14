@@ -1,7 +1,12 @@
 # Linux
 ## Listen shares
 ```sh
-smbclient -L 10.129.68.132
+smbclient -L <ip>
+```
+
+## Samba share enumerator
+```sh
+smbmap -u guest -d workgroup -H <ip>
 ```
 
 ## Recursively download a file share
