@@ -30,11 +30,15 @@ set SpiderShares true
 ## Options
 ```ruby
 use auxiliary/admin/smb/download_file
+set RHOSTS <ip>
+set SMBUser Guest
+set SMBSHARE "<share>"
+set RPATH "\<path>\file"
 ```
 
 ## Run
 ```ruby
 use auxiliary/admin/smb/download_file
-run smb://Guest:@<ip>/<share>/<path>/<file>
+run smb://guest@<ip>/<share>/<path>/<file>
 # run smb://<user>:<password>@<ip>/<share>/<path>/<file>
 ```
