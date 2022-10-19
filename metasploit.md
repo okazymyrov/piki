@@ -59,3 +59,22 @@ set USE_WINDOWS_AUTHENT true
 use auxiliary/scanner/mssql/mssql_login
 run -o PASSWORD=<password>,username=<username>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port> <ip>
 ``
+
+# Microsoft SQL Server command execution
+## Options
+```ruby
+use auxiliary/admin/mssql/mssql_exec
+set RHOSTS <ip>
+set PASSWORD <password>
+set username <user>
+set domain <domain>
+set USE_WINDOWS_AUTHENT true
+set CMD <whoami>
+
+```
+
+## Run
+```ruby
+use auxiliary/admin/mssql/mssql_exec
+run -o PASSWORD=<password>,username=<username>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port>,CMD=<whoami> <ip>
+```
