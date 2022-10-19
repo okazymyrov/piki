@@ -23,6 +23,7 @@ set SpiderShares true
 
 ## Run
 ```ruby
+ run -o ShowFiles=true,SpiderShares=true smb://guest@<ip>
 ```
 
 # Download a file over SMB
