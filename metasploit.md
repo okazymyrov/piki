@@ -15,8 +15,10 @@ captureg start --ip <ip>
 ## Options
 ```ruby
 use auxiliary/scanner/smb/smb_enumshares
-set SMBUser Guest
 set RHOSTS <ip>
+set SMBUser Guest
+set ShowFiles true
+set SpiderShares true
 ```
 
 ## Run
