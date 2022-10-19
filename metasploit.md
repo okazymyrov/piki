@@ -42,3 +42,20 @@ use auxiliary/admin/smb/download_file
 run smb://guest@<ip>/<share>/<path>/<file>
 # run smb://<user>:<password>@<ip>/<share>/<path>/<file>
 ```
+
+# MSSQL Login 
+## Options
+```ruby
+use auxiliary/scanner/mssql/mssql_login
+set RHOSTS <ip>
+set PASSWORD <password>
+set username <user>
+set domain <domain>
+set USE_WINDOWS_AUTHENT true
+```
+
+## Run
+```ruby
+use auxiliary/scanner/mssql/mssql_login
+run -o PASSWORD=<password>,username=<username>,domain=<domain>,USE_WINDOWS_AUTHENT=<true>,RPORT=<port> <ip>
+``
