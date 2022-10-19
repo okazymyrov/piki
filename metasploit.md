@@ -10,3 +10,28 @@ run
 load capture
 captureg start --ip <ip>
 ```
+
+# Enumerate SMB shares
+## Options
+```ruby
+use auxiliary/scanner/smb/smb_enumshares
+set SMBUser Guest
+set RHOSTS <ip>
+```
+
+## Run
+```ruby
+```
+
+# Download a file over SMB
+## Options
+```ruby
+use auxiliary/admin/smb/download_file
+```
+
+## Run
+```ruby
+use auxiliary/admin/smb/download_file
+run smb://Guest:@<ip>/<share>/<path>/<file>
+# run smb://<user>:<password>@<ip>/<share>/<path>/<file>
+```
