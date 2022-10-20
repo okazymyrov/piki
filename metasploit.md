@@ -199,7 +199,7 @@ set SESSION <1>
 set TECHNIQUE <6>
 ```
 
-# msfconsole
+## msfconsole
 ```ruby
 sessions -C "getsystem -t 6" -i 14
 ```
