@@ -205,6 +205,12 @@ use post/windows/escalate/getsystem
 run -o SESSION=<1>,TECHNIQUE=<6>
 ```
 
+# Migrate between architectures
+```ruby
+use post/windows/manage/archmigrate
+set SESSION <1>
+```
+
 # Mimikatz
 ## Meterpreter
 ### Change password
