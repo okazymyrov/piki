@@ -21,8 +21,9 @@ vncviewer -listen 0
 
 ## Client - Windows
 ```batchfile
-# https://www.tightvnc.com/download.php
-# the file can be unpacked from MSI using 7z
+:: https://www.tightvnc.com/download.php
+:: the file can be unpacked from MSI using 7z
 tvnserver.exe
-tvnserver.exe -controlservice -connect <linux_ip>:5500
+:: cmd /c tvnserver
+tvnserver.exe -controlapp -connect <linux_ip>:5500
 ```
