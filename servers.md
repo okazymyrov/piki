@@ -12,3 +12,17 @@ python -m SimpleHTTPServer 8000
 ```sh
 npx http-server -p 8000
 ```
+
+# Reverse VNC
+## Server - Linux
+```sh
+vncviewer -listen 0
+```
+
+## Client - Windows
+```batchfile
+# https://www.tightvnc.com/download.php
+# the file can be unpacked from MSI using 7z
+tvnserver.exe
+tvnserver.exe -controlservice -connect <linux_ip>:5500
+```
