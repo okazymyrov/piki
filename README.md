@@ -16,6 +16,7 @@
   - [gobuster](https://github.com/okazymyrov/piki/blob/master/gobuster.md)
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
   - [impacket](https://github.com/okazymyrov/piki/blob/master/impacket.md)
+  - [John the Ripper]https://github.com/okazymyrov/piki/blob/master/john.md
   - [medusa](https://github.com/okazymyrov/piki/blob/master/medusa.md)
   - [Metasploit](https://github.com/okazymyrov/piki/blob/master/metasploit.md)
   - [mimikatz](https://github.com/okazymyrov/piki/blob/master/mimikatz.md)
@@ -39,6 +40,7 @@
 - Cracking
   - [Password audit](https://github.com/okazymyrov/piki/blob/master/PasswordAudit.md)
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
+  - [John the Ripper]https://github.com/okazymyrov/piki/blob/master/john.md
 - Azure
   - [Azure](https://github.com/okazymyrov/piki/blob/master/Azure.md)
 - Payload Delivery
