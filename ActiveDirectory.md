@@ -17,8 +17,14 @@ nltest /trusted_domains
 
 ## Find Domain Controllers
 ### PowerShell
+#### Domain controllers of the logged on account
 ```powershell
 ([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).DomainControllers
+```
+
+#### Domain controllers of the machine
+```powershell
+([System.DirectoryServices.ActiveDirectory.Domain]::GetComputerDomain()).DomainControllers
 ```
 
 ## Find LDAP servers
