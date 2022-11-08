@@ -3,6 +3,7 @@
 - Solutions
   - [Active Directory](https://github.com/okazymyrov/piki/blob/master/ActiveDirectory.md)
   - [LFI to RFI](https://github.com/okazymyrov/piki/blob/master/LFI_2_RFI.md)
+  - [Git](https://github.com/okazymyrov/piki/blob/master/git.md)
 - Protocols
   - [SNMP](https://github.com/okazymyrov/piki/blob/master/SNMP.md)
 - Wireless
@@ -26,6 +27,7 @@
   - [Responder](https://github.com/okazymyrov/piki/blob/master/responder.md)
   - [Rubeus](https://github.com/okazymyrov/piki/blob/master/Rubeus.md)
   - [sqlmap](https://github.com/okazymyrov/piki/blob/master/sqlmap.md)
+  - [wfuzz](https://github.com/okazymyrov/piki/blob/master/wfuzz.md)
   - [wmic](https://github.com/okazymyrov/piki/blob/master/wmic.md)
   - [xfreerdp](https://github.com/okazymyrov/piki/blob/master/xfreerdp.md)
 - Auxiliary
