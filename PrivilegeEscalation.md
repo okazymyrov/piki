@@ -75,3 +75,17 @@ void _init() {
 }
 ```
 
+## [pspy - unprivileged Linux process snooping](https://github.com/DominicBreuker/pspy)
+
+```sh
+# print both commands and file system events and scan procfs every 1000 ms (=1sec)
+./pspy64 -pf -i 1000 
+
+# place watchers recursively in two directories and non-recursively into a third
+./pspy64 -r /path/to/first/recursive/dir -r /path/to/second/recursive/dir -d /path/to/the/non-recursive/dir
+
+# disable printing discovered commands but enable file system events
+./pspy64 -p=false -f
+```
+
+
