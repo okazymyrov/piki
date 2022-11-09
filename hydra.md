@@ -3,6 +3,11 @@
 hydra -l <user> -P <path_to_passwords> smb://<ip>
 ```
 
+# Brute force passwords over SSH
+```sh
+hydra -L <path_to_usernames> -P </usr/share/wordlists/fasttrack.txt> ssh://<ip>
+```
+
 # Brute force usernames and passwords over FTP
 ```sh
 hydra -L <path_to_usernames> -P <path_to_passwords> -u -e snr -s <port> <ip> ftp
