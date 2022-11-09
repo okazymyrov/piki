@@ -113,3 +113,9 @@ curl -s -X POST --unix-socket /var/run/docker.sock "http://localhost/containers/
 ```sh
 docker run -v /:/mnt --rm -it alpine chroot /mnt sh
 ```
+
+## Finding some interesting ports
+```sh
+grep -R "<port>" </opt>
+```
+
