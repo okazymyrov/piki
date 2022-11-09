@@ -17,7 +17,7 @@
   - [gobuster](https://github.com/okazymyrov/piki/blob/master/gobuster.md)
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
   - [impacket](https://github.com/okazymyrov/piki/blob/master/impacket.md)
-  - [John the Ripper]https://github.com/okazymyrov/piki/blob/master/john.md
+  - [John the Ripper](https://github.com/okazymyrov/piki/blob/master/john.md)
   - [medusa](https://github.com/okazymyrov/piki/blob/master/medusa.md)
   - [Metasploit](https://github.com/okazymyrov/piki/blob/master/metasploit.md)
   - [mimikatz](https://github.com/okazymyrov/piki/blob/master/mimikatz.md)
@@ -39,6 +39,8 @@
   - [Data Exfiltration](https://github.com/okazymyrov/piki/blob/master/DataExfiltration.md)
 - Privilege Escalation  
   - [Privilege Escalation](https://github.com/okazymyrov/piki/blob/master/PrivilegeEscalation.md)
+- Persistence
+  - [Persistence](https://github.com/okazymyrov/piki/blob/master/persistence.md)
 - Cracking
   - [Password audit](https://github.com/okazymyrov/piki/blob/master/PasswordAudit.md)
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
