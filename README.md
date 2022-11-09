@@ -44,7 +44,7 @@
 - Cracking
   - [Password audit](https://github.com/okazymyrov/piki/blob/master/PasswordAudit.md)
   - [hashcat](https://github.com/okazymyrov/piki/blob/master/hashcat.md)
-  - [John the Ripper]https://github.com/okazymyrov/piki/blob/master/john.md
+  - [John the Ripper](https://github.com/okazymyrov/piki/blob/master/john.md)
 - Azure
   - [Azure](https://github.com/okazymyrov/piki/blob/master/Azure.md)
 - Payload Delivery
