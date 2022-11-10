@@ -57,3 +57,5 @@
 - References
   - [Cobalt Strike Red Team Ops - Training Course](https://www.youtube.com/playlist?list=PLcjpg2ik7YT6H5l9Jx-1ooRYpfvznAInJ)
   - [Universal sigma rule converter for various SIEM, EDR, and NTDR formats](https://uncoder.io/)
+  - [Payloads All The Things](https://github.com/swisskyrepo/PayloadsAllTheThings)
+  - [Microsoft Administrator Sites](https://msportals.io/)
