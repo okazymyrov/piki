@@ -4,6 +4,7 @@
   - [Active Directory](https://github.com/okazymyrov/piki/blob/master/ActiveDirectory.md)
   - [LFI to RFI](https://github.com/okazymyrov/piki/blob/master/LFI_2_RFI.md)
   - [Git](https://github.com/okazymyrov/piki/blob/master/git.md)
+  - [Miscellaneous](https://github.com/okazymyrov/piki/blob/master/miscellaneous.md)
 - Protocols
   - [SNMP](https://github.com/okazymyrov/piki/blob/master/SNMP.md)
 - Wireless
