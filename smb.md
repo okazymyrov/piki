@@ -5,9 +5,14 @@ smbclient -L <ip>
 ```
 
 ## Connect to remote share
+
+### URI
 ```sh
 smbclient //<ip>/<share>
 ```
+
+### Windows
+smbclient -U Administrator \\\\10.129.67.254\\C$
 
 ## Samba share enumerator
 ```sh
