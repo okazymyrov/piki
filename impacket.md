@@ -1,6 +1,12 @@
-# smbserver
+# SMB
+## smbserver
 ```sh
 impacket-smbserver -comment 'public' -smb2support -ip <ip_to_listen> public /tmp
+```
+
+## smbclient
+```sh
+impacket-smbclient [[domain/]username[:password]@]<targetName or address>
 ```
 
 # Interact with MSSQL server
