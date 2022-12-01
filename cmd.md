@@ -21,3 +21,8 @@ conhost cmd.exe
 ```batchfile
 dir "C:\Users\*.txt" /s
 ```
+
+# Merge two binary files
+```batchfile
+copy /b cmd.exe+calc.exe new_cmd.exe
+```
