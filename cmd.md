@@ -26,3 +26,9 @@ dir "C:\Users\*.txt" /s
 ```batchfile
 copy /b cmd.exe+calc.exe new_cmd.exe
 ```
+
+# Get hash of a file
+```batchfile
+certutil -hashfile C:\Windows\System32\cmd.exe SHA256
+```
+
