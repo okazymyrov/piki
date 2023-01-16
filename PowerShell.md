@@ -182,3 +182,8 @@ powershell -NonInteractive -Command Get-MpPreference
 powershell -NonInteractive -Command Add-MpPreference -ExclusionPath "C:\tmp"
 powershell -NonInteractive -Command Add-MpPreference -ExclusionProcess "java.exe"
 ```
+
+# Convert Base64 encoded string to hex
+```powershell
+(([System.Convert]::FromBase64String("<base64str>") | Format-Hex).Bytes | ForEach-Object {"{0:x}" -f $_}) -join ''
+```
