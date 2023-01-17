@@ -1,7 +1,6 @@
 REM Title: Cobal Strike Payloader
 REM Author: https://github.com/okazymyrov/
 REM Description: This payload pathes amsi.dll AmsiScanBuffer and executes a beacon.
-REM Target: Windows 10, 11
 
 REM Run PowerShell
 GUI r
