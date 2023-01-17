@@ -17,7 +17,7 @@
 - [Systems](/Systems)
   - [ActiveDirectory](/Systems/ActiveDirectory)
     - [ActiveDirectory.md](/Systems/ActiveDirectory/ActiveDirectory.md)
-    - [ActiveDirectory.md](/Systems/ActiveDirectory/KerberosAttacksCheatsheet.md)
+    - [KerberosAttacksCheatsheet.md](/Systems/ActiveDirectory/KerberosAttacksCheatsheet.md)
   - [Azure.md](/Systems/Azure.md)
   - [MariaDB.md](/Systems/MariaDB.md)
   - [NTDS.dit.md](/Systems/NTDS.dit.md)
