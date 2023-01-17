@@ -73,7 +73,7 @@
   - [xfreerdp.md](/Tools/xfreerdp.md)  
 
 - [Vulnerabilities](/Vulnerabilities)
-  - [Vulnerabilities.md](/Vulnerabilities/Vulnerabilities.md
+  - [Vulnerabilities.md](/Vulnerabilities/Vulnerabilities.md)
 
 - References
   - [Cobalt Strike Red Team Ops - Training Course](https://www.youtube.com/playlist?list=PLcjpg2ik7YT6H5l9Jx-1ooRYpfvznAInJ)
