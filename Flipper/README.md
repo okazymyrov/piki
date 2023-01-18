@@ -1,4 +1,10 @@
 # Bad USB
+## Overwrite input layout with en-US
+```powershell
+$OldList = Get-WinUserLanguageList
+Set-WinUserLanguageList -Force -LanguageList (New-WinUserLanguageList -Language en-US)
+Set-WinUserLanguageList -Force -LanguageList $OldList
+```
 ## Documentation
 * [Flipper Zero Bad USB](https://docs.flipperzero.one/bad-usb)
 * [I-Am-Jakoby - Flipper Zero BadUSB](https://github.com/I-Am-Jakoby/Flipper-Zero-BadUSB)
