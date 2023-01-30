@@ -6,5 +6,5 @@ python -m http.server --directory /tmp
 # tab #2
 ./cloudflared tunnel --url http://localhost:8000
 ```
-- [servers](/Tools/servers.md)
+- [servers](/Tactics/CommandAndControl/servers.md)
 # Windows
