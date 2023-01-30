@@ -1,4 +1,4 @@
-# Cloudflare Tunnel client
+# [Cloudflare Tunnel client](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/use_cases/)
 ## HTTP Tunnel
 ```sh
 ./cloudflared tunnel --url http://localhost:8000
