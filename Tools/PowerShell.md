@@ -152,8 +152,15 @@ Get-ChildItem -Recurse | Select-String -Pattern "EMAIL_ADDRESS" -List
 ```
 
 # Search files based on a pattern
+## On a local computer
 ```powershell
 Get-ChildItem -Path "C:\Users\" -Recurse -File -ErrorAction SilentlyContinue -Include "*.txt"
+```
+
+## On an SMB share
+```powershell
+cd \\servername\foldername
+Get-ChildItem -Path ".\" -Recurse -File -ErrorAction SilentlyContinue -Include "*.txt"
 ```
 
 # Generate a 128-bit password
