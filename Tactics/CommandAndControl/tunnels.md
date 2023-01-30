@@ -28,7 +28,10 @@ cloudflared.exe access tcp --hostname rainbow-alignment-risk-harold.trycloudflar
 ```
 
 # SSH
-## Reverse SSH tunnel
+## SSH over an SSH tunnel
+![This is an image](/Tactics/CommandAndControl/assets/ssh_over_ssh_tunnel.png)
+
+
   - Add a public key to authorized keys:
 ```sh
 echo "<public_key>" >> ~/.ssh/authorized_keys
