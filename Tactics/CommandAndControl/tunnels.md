@@ -29,5 +29,16 @@ cloudflared.exe access tcp --hostname rainbow-alignment-risk-harold.trycloudflar
 
 # SSH
 ## Reverse SSH tunnel
+  - Add a public key to authorized keys:
 ```sh
+echo "<public_key>" >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+```
+  - Connect **vega** to **proxima**
+```sh
+ssh -i <id_rsa_vega> <username_on_proxima>@proxima -R 2222:127.0.0.1:22 # Listen on port TCP 2222 on proxima/localhost
+```
+  - Connect to the target host
+```sh
+ssh -i <id_rsa_proxima> <username_on_vega>@localhost -p 2222
 ```
