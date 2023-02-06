@@ -65,6 +65,7 @@
   - [john.md](/Tools/john.md)
   - [medusa.md](/Tools/medusa.md)
   - [metasploit.md](/Tools/metasploit.md)
+  - [MFASweep](/Tools/MFASweep.md)
   - [mimikatz.md](/Tools/mimikatz.md)
   - [msfvenom.md](/Tools/msfvenom.md)
   - [pcap.md](/Tools/pcap.md)
