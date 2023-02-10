@@ -32,3 +32,7 @@ copy /b cmd.exe+calc.exe new_cmd.exe
 certutil -hashfile C:\Windows\System32\cmd.exe SHA256
 ```
 
+# [Displays the device join status](https://learn.microsoft.com/en-us/azure/active-directory/devices/faq#how-do-i-know-what-the-device-registration-state-of-the-client-is)
+```batchfile
+dsregcmd.exe /status
+```
