@@ -48,6 +48,7 @@
     - [BloodHound.md](/Tools/BloodHound/BloodHound.md)
     - [customqueries.json](/Tools/BloodHound/customqueries.json)
   - [CyberChef.md](/Tools/CyberChef.md)
+  - [DonPAPI.md](/Tools/DonPAPI.md)
   - [PowerShell.md](/Tools/PowerShell.md)
   - [RsaCtfTool.md](/Tools/RsaCtfTool.md)
   - [Rubeus.md](/Tools/Rubeus.md)
