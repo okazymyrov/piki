@@ -7,3 +7,8 @@ sed -n '/foo/,$p' ./users.txt > ./users.foo-.txt
 ```sh
 grep -xFf ./ntlm.txt ./pwned-passwords-ntlm-ordered-by-hash-v8.txt
 ```
+
+# Decode base64 encoded lines
+```sh
+cat ./file.txt | xargs -L 1 -I {} printf "{}\nCg==" | base64 -d
+```
