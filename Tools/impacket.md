@@ -24,3 +24,9 @@ impacket-mssqlclient -port <port> <user>:<password>@<ip>
 ```sh
 enable_xp_cmdshell 1
 ```
+
+# RDP
+## Check credentials over RDP
+```sh
+impacket-rdp_check -hashes :<ntlm> '<domain>/<user>:@10.165.14.42'
+```
