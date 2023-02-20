@@ -47,6 +47,7 @@
   - [BloodHound](/Tools/BloodHound)
     - [BloodHound.md](/Tools/BloodHound/BloodHound.md)
     - [customqueries.json](/Tools/BloodHound/customqueries.json)
+  - [Certify.md](/Tools/Certify.md)
   - [CyberChef.md](/Tools/CyberChef.md)
   - [DonPAPI.md](/Tools/DonPAPI.md)
   - [PowerShell.md](/Tools/PowerShell.md)
