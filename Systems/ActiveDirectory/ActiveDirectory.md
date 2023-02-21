@@ -118,7 +118,7 @@ Get-Content $filename | ForEach-Object {
 python -c "import hashlib,binascii; print (binascii.hexlify(hashlib.new('md4', '<password>'.encode('utf-16le')).digest()))"
 ```
 
-# [Kerberos cheatsheet](https://github.com/okazymyrov/piki/blob/master/kerberos_attacks_cheatsheet.md)
+# [Kerberos cheatsheet](./KerberosAttacksCheatsheet.md)
 
 #  The credentials specified are for remote access only
 ```batchfile
