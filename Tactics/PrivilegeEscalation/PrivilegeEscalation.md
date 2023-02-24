@@ -1,9 +1,14 @@
 # Windows
-## Privilege Escalation Scripts
-- [PrivescCheck [20220608]](https://github.com/itm4n/PrivescCheck)
-- [Windows Privilege Escalation Awesome Scripts [20220501]](https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS)
 
-## [Priv2Admin](https://github.com/gtworek/Priv2Admin)
+## Privilege escalation scripts
+### [Windows Privilege Escalation Awesome Scripts](https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS)
+### [PrivescCheck](https://github.com/itm4n/PrivescCheck)
+
+## Windows OS privileges
+### [Priv2Admin](https://github.com/gtworek/Priv2Admin)
+### [PrivFu](https://github.com/daem0nc0re/PrivFu)
+
+
 
 ## Add a user to the local system - C#
 - [Add a user to the local system - C#](https://docs.microsoft.com/en-us/troubleshoot/developer/visualstudio/csharp/language-compilers/add-user-local-system)
