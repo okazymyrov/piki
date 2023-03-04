@@ -194,3 +194,16 @@ powershell -NonInteractive -Command Add-MpPreference -ExclusionProcess "java.exe
 ```powershell
 (([System.Convert]::FromBase64String("<base64str>") | Format-Hex).Bytes | ForEach-Object {"{0:x}" -f $_}) -join ''
 ```
+
+#  Checks if the current Powershell instance is running with elevated privileges
+```powershell
+function IsAdmin {
+    try {
+        $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
+        $principal = New-Object Security.Principal.WindowsPrincipal -ArgumentList $identity
+        return $principal.IsInRole( [Security.Principal.WindowsBuiltInRole]::Administrator )
+    } catch {
+        throw "Failed to determine if the current user has elevated privileges. The error was: '{0}'." -f $_
+    }
+}; IsAdmin
+```
