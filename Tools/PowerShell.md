@@ -195,7 +195,7 @@ powershell -NonInteractive -Command Add-MpPreference -ExclusionProcess "java.exe
 (([System.Convert]::FromBase64String("<base64str>") | Format-Hex).Bytes | ForEach-Object {"{0:x}" -f $_}) -join ''
 ```
 
-#  Checks if the current Powershell instance is running with elevated privileges
+# Checks if the current Powershell instance is running with elevated privileges
 ```powershell
 function IsAdmin {
     try {
@@ -206,4 +206,10 @@ function IsAdmin {
         throw "Failed to determine if the current user has elevated privileges. The error was: '{0}'." -f $_
     }
 }; IsAdmin
+```
+
+# [Get-ADPrincipalKerberosTokenGroup](https://raw.githubusercontent.com/YossiSassi/Get-ADPrincipalKerberosTokenGroup/main/Get-ADPrincipalKerberosTokenGroup.ps1)
+## Find user's group in the default AD
+```powershell
+Get-ADPrincipalKerberosTokenGroup <username>
 ```
