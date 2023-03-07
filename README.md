@@ -14,7 +14,6 @@
   - [Invoke-Mimikatz.ps1.encrypted](/Payloads/Invoke-Mimikatz.ps1.encrypted)
   - [Invoke-Rubeus.ps1](/Payloads/Invoke-Rubeus.ps1)
   - [Invoke-Rubeus.ps1.encrypted](/Payloads/Invoke-Rubeus.ps1.encrypted)
-  - [b.ps1.encrypted](/Payloads/b.ps1.encrypted)
 
 - [Systems](/Systems)
   - [ActiveDirectory](/Systems/ActiveDirectory)
