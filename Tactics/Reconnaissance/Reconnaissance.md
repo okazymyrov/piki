@@ -14,3 +14,5 @@ arp -a
 ```
 https://login.microsoftonline.com/getuserrealm.srf?login=user@<example.com>&xml=1
 ```
+
+# [SpideFoot](https://github.com/smicallef/spiderfoot)
