@@ -125,3 +125,15 @@ python -c "import hashlib,binascii; print (binascii.hexlify(hashlib.new('md4', '
 runas /netonly /user:<domain>\<user> cmd.exe
 net view \\<dc>.<domain.local>\
 ```
+
+# [Displays the Resultant Set of Policy (RSoP)](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/gpresult)
+
+## Displays RSoP summary data for the current user
+```batchfile
+gpresult /R
+```
+
+## Displays RSoP summary data for the current user and saves the report in HTML format
+```batchfile
+gpresult /H .\Downloads\gpresult.mxq.html
+```
