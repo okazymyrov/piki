@@ -72,6 +72,7 @@
   - [MFASweep](/Tools/MFASweep.md)
   - [mimikatz.md](/Tools/mimikatz.md)
   - [msfvenom.md](/Tools/msfvenom.md)
+  - [nc.md](/Tools/nc.md)
   - [pcap.md](/Tools/pcap.md)
   - [psexec.md](/Tools/psexec.md)
   - [responder.md](/Tools/responder.md)
