@@ -1,4 +1,11 @@
 # [Cloudflare Tunnel client](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/use_cases/)
+
+## Download cloudflared
+```batchfile
+REM latest releases: https://github.com/cloudflare/cloudflared/releases
+curl.exe -L https://github.com/cloudflare/cloudflared/releases/download/2023.3.1/cloudflared-windows-amd64.exe -o cloudflared.exe
+```
+
 ## HTTP Tunnel
 ```sh
 ./cloudflared tunnel --url http://localhost:8000
