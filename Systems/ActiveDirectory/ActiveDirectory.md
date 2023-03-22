@@ -111,6 +111,11 @@ Get-Content $filename | ForEach-Object {
 }
 ```
 
+## Find computers with enabled unconstrained delegation
+```powershell
+([adsisearcher]"(&(objectCategory=computer)(userAccountControl:1.2.840.113556.1.4.803:=524288))").FindAll().Properties.samaccountname
+```
+
 #  Convert password to NTLM
 
 ## Text-based password
