@@ -1,7 +1,7 @@
 # Dictionaries
 - https://weakpass.com/
-- [password_cracking_rule](https://github.com/NotSoSecure/password_cracking_rules)
-- [OneRuleToRuleThemAll.rule](https://raw.githubusercontent.com/okazymyrov/piki/master/OneRuleToRuleThemAll.rule)
+- [OneRuleToRuleThemStill](https://github.com/stealthsploit/OneRuleToRuleThemStill)
+- [password_cracking_rule (replaced by OneRuleToRuleThemStill)](https://github.com/NotSoSecure/password_cracking_rules)
 
 # Kerberoasting
 ```sh
