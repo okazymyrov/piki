@@ -214,6 +214,12 @@ function IsAdmin {
 Get-ADPrincipalKerberosTokenGroup <username>
 ```
 
+# Get list of AD groups a user is a member of
+```powershell
+(New-Object System.DirectoryServices.DirectorySearcher("(&(objectCategory=User)(samAccountName=[username]))")).FindOne().GetDirectoryEntry().memberOf
+
+```
+
 # Run as SYSTEM
 ⚠️ All commands requires **Administrator Privilege**. 
 ## [PowerRunAsSystem](https://github.com/DarkCoderSc/PowerRunAsSystem)
