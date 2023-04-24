@@ -3,10 +3,10 @@
 # sudo python3
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import ssl, os
-os.system("openssl req -nodes -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -subj '/CN=mylocalhost'")
+os.system("openssl req -nodes -x509 -newkey rsa:2048 -keyout /tmp/key.pem -out /tmp/cert.pem -days 365 -subj '/CN=mylocalhost'")
 port = 443
 httpd = HTTPServer(('0.0.0.0', port), SimpleHTTPRequestHandler)
-httpd.socket = ssl.wrap_socket(httpd.socket, keyfile='key.pem', certfile="cert.pem", server_side=True)
+httpd.socket = ssl.wrap_socket(httpd.socket, keyfile='/tmp/key.pem', certfile="/tmp/cert.pem", server_side=True)
 print(f"Server running on https://0.0.0.0:{port}")
 httpd.serve_forever()
 ```
