@@ -11,12 +11,12 @@
 
 # Microsoft TOTP
 ```
-#recipe=To_Upper_case('All')From_Base32('A-Z2-7%3D',true)Generate_TOTP('',32,6,0,30)&input=eHB2bjJycm1qcG5idm5qaw
+#recipe=To_Upper_case('All')From_Base32('A-Z2-7%3D',true)Generate_TOTP('',32,6,0,30)
 ```
 
 # English text in Greek letters
 ```
-#recipe=To_Lower_case()Substitute('abdefiklmnopstuvwxyz','αβδεφικλμηορςτυνωχγζ')&input=cGVudGVzdCB3aWtp
+#recipe=To_Lower_case()Substitute('abdefiklmnopstuvwxyz','αβδεφικλμηορςτυνωχγζ')
 ```
 
 # Decrypt the administrator password for a running Windows instance in AWS
@@ -35,3 +35,13 @@ aws ec2 get-password-data --instance-id ${ii} | jq .PasswordData
 
 </p>
 </details>
+
+# Encode powershell code to Base64
+```
+#recipe=Encode_text('UTF-16LE (1200)')To_Base64('A-Za-z0-9%2B/%3D')
+```
+
+# Decode Base64 to powershell code
+```
+#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)Decode_text('UTF-16LE (1200)')
+```
