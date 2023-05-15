@@ -37,15 +37,14 @@ certutil -hashfile C:\Windows\System32\cmd.exe SHA256
 dsregcmd.exe /status
 ```
 # Get a list of logged user sessions from a remote computer
-## qwinsta
-```batchfile
-qwinsta /server:[server]
-```
 ## query session
 ```batchfile
 query session /server:[server]
 ```
-
+### qwinsta
+```batchfile
+qwinsta /server:[server]
+```
 ## query user
 ```batchfile
 query user /server:[server]
