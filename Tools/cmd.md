@@ -39,10 +39,14 @@ dsregcmd.exe /status
 # Get a list of logged user sessions from a remote computer
 ## qwinsta
 ```batchfile
-qwinsta /server:STBAP455FP
+qwinsta /server:[server]
+```
+## query session
+```batchfile
+query session /server:[server]
 ```
 
-## query
+## query user
 ```batchfile
-query user /server:STBAP455FP
+query user /server:[server]
 ```
