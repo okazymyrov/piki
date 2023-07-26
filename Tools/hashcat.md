@@ -24,11 +24,21 @@ hashcat --session=md5 -m 0 -a 0 [path to hashes] /usr/share/wordlists/rockyou.tx
 ```
 
 # PDF
+<details><summary>How do you get the hash from a PDF?</summary>
+<p>
+
+* [pdf2hashcat.py](https://github.com/stricture/hashstack-server-plugin-hashcat/blob/master/scrapers/pdf2hashcat.py)
+
 ```sh
-# ./pdf2hashcat.py ./file.pdf > [path to hashes]
-hashcat --session=md5 -m 10500 -a 3 [path to hashes] ?d?d?d?d?d
+./pdf2hashcat.py ./file.pdf > [path to hashes]
 ```
 
+</p>
+</details>
+
+```sh
+hashcat --session=md5 -m 10500 -a 3 [path to hashes] ?d?d?d?d?d
+```
 
 # Restore a session
 ```sh
