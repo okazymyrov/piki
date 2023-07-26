@@ -3,7 +3,7 @@
 - [Flipper](/Flipper)
   - [BadUSB](/Flipper/BadUSB)
     - [beacon.txt](/Flipper/BadUSB/beacon.txt)
-    - [Wi-Fi-Passwords.txt](/Flipper/BadUSB/Wi-Fi-Passwords.txt)
+    - [Wi-Fi-Passwords-Console.txt](/Flipper/BadUSB/Wi-Fi-Passwords-Console.txt)
     - [Wi-Fi-Passwords-GitHub.txt](/Flipper/BadUSB/Wi-Fi-Passwords-GitHub.txt)
 
 - [PasswordCracking](/PasswordCracking)
