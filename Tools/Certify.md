@@ -2,12 +2,12 @@
 ```batchfile
 Certify.exe cas /domain:<domain> /hideAdmins /showAllPermissions
 ```
-# Find vulnerable certificate templates via domain name:
+# Find vulnerable certificate templates via domain name
 ```batchfile
 Certify.exe find /domain:<domain> /vulnerable
 ```
 
-# Find vulnerable certificate templates using an LDAP server:
+# Find vulnerable certificate templates using an LDAP server
 ```batchfile
 Certify.exe find /ldapserver:<server.domain.local> /vulnerable
 ```
