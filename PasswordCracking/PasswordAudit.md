@@ -1,4 +1,4 @@
-# [Extract password from NTDS.dit](/Systems/NTDS.dit.md)
+# [Extract passwords from NTDS.dit](/Systems/NTDS.dit.md)
 
 # Check NTLM hashes agains The Pwned Passwords list
 - [The Pwned Passwords list - NTLM (ordered by hash)](https://haveibeenpwned.com/Passwords)
