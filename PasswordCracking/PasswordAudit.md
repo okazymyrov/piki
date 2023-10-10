@@ -1,10 +1,18 @@
 # [Extract passwords from NTDS.dit](/Systems/NTDS.dit.md)
 
 # Check NTLM hashes agains The Pwned Passwords list
-- [The Pwned Passwords list - NTLM (ordered by hash)](https://haveibeenpwned.com/Passwords)
+## [The Pwned Passwords list - NTLM (ordered by hash)](https://haveibeenpwned.com/Passwords)
+
+### Download
+```sh
+dotnet tool install --global haveibeenpwned-downloader
+haveibeenpwned-downloader pwned-passwords-ntlm -o -p 64 -n
+```
+
+### Format 
 ```sh
 cut -d ":" -f "4" ./ntlm.txt | tr '[:lower:]' '[:upper:]' > ./t; mv ./t ./ntlm.txt # ntlm.txt is in the hashcat format
-cut -d ":" -f "1" ./pwned-passwords-ntlm-ordered-by-hash-v8.txt > ./t; mv ./t ./pwned-passwords-ntlm-ordered-by-hash-v8.txt
+cut -d ":" -f "1" ./pwned-passwords-ntlm.txt > ./t; mv ./t ./pwned-passwords-ntlm.txt
 ```
 
 ## hashcat
