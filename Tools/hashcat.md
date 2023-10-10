@@ -10,7 +10,7 @@ hashcat --session=kerb -m13100 -a0 [path to hashes] /usr/share/wordlists/rockyou
 
 # NTLM
 ```sh
-hashcat --session=ntlm -m1000 -a0 [path to hashes] /usr/share/wordlists/rockyou.txt -r OneRuleToRuleThemAll.rule
+hashcat --session=ntlm -m1000 -a0 [path to hashes] /usr/share/wordlists/rockyou.txt -r OneRuleToRuleThemStill.rule
 ```
 
 # NTLMv2
