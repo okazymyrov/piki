@@ -17,11 +17,11 @@ cut -d ":" -f "1" ./pwned-passwords-ntlm.txt > ./t; mv ./t ./pwned-passwords-ntl
 
 ## hashcat
 ```sh
-hashcat --session=password_audit --potfile-path=./password.audit.potfile -m 99999 --outfile=./ntlm.hibp.txt -a 0 ./ntlm.txt ./pwned-passwords-ntlm-ordered-by-hash-v8.txt
+hashcat --session=password_audit --potfile-path=./password.audit.potfile -m 99999 --outfile=./ntlm.hibp.txt -a 0 ./ntlm.txt ./pwned-passwords-ntlm.txt
 ```
 ## grep
 ```sh
-grep -xFf ./ntlm.txt ./pwned-passwords-ntlm-ordered-by-hash-v8.txt > ./ntlm.hibp.grep.txt
+grep -xFf ./ntlm.txt ./pwned-passwords-ntlm.txt > ./ntlm.hibp.grep.txt
 ```
 
 # [DPAT](https://github.com/clr2of8/DPAT)
