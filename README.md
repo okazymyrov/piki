@@ -8,7 +8,7 @@
 
 - [PasswordCracking](/PasswordCracking)
   - [PasswordAudit.md](/PasswordCracking/PasswordAudit.md)
-  - [OneRuleToRuleThemAll.rule](/PasswordCracking/OneRuleToRuleThemAll.rule)
+  - [OneRuleToRuleThemAll.rule](/PasswordCracking/OneRuleToRuleThemStill.rule)
 
 - [Payloads](/Payloads/)
   - [Invoke-Mimikatz.ps1.encrypted](/Payloads/Invoke-Mimikatz.ps1.encrypted)
