@@ -62,6 +62,7 @@
   - [cewl.md](/Tools/cewl.md)
   - [cmd.md](/Tools/cmd.md)
   - [crackmapexec.md](/Tools/crackmapexec.md)
+  - [curl.md](/Tools/curl.md)
   - [evil-winrm.md](/Tools/evil-winrm.md)
   - [gobuster.md](/Tools/gobuster.md)
   - [hashcat.md](/Tools/hashcat.md)
