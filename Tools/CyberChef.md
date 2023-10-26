@@ -45,3 +45,8 @@ aws ec2 get-password-data --instance-id ${ii} | jq .PasswordData
 ```
 #recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)Decode_text('UTF-16LE (1200)')
 ```
+
+# Decode $HEX[] (hashcat output) to UTF-8
+```
+#recipe=Fork('\\n','\\n',false)Find_/_Replace({'option':'Simple string','string':'$HEX['},'',true,false,true,false)Find_/_Replace({'option':'Simple string','string':']'},'',true,false,true,false)From_Hex('None')
+```
