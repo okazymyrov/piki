@@ -9,6 +9,6 @@ REM For example, %USERPROFILE%\AppData\Local\Packages\PythonSoftwareFoundation.P
 
 # [ROADtools Token eXchange (roadtx)](https://github.com/dirkjanm/ROADtools/wiki/ROADtools-Token-eXchange-(roadtx))
 ## Use a refresh token to request a token for the Microsoft Graph
-```console
-roadtx gettokens --refresh-token "<token>" -r msgraph
+```sh
+roadtx gettokens --refresh-token "[token]" -r msgraph
 ```
