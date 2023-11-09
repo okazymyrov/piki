@@ -1,6 +1,6 @@
 # [Installation](https://github.com/dirkjanm/ROADtools)
 ## Windows
-```console
+```batch
 pip install roadrecon
 pip install roadtx
 REM Add Python scripts to PATH
