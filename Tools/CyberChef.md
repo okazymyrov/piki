@@ -1,4 +1,4 @@
-# User password to NTLM
+![image](https://github.com/okazymyrov/piki/assets/1721372/b58b28eb-aefb-4707-84fb-5e7591f0728a)# User password to NTLM
 
 ```
 #recipe=Encode_text('UTF-16LE%20(1200)')MD4()
@@ -50,3 +50,9 @@ aws ec2 get-password-data --instance-id ${ii} | jq .PasswordData
 ```
 #recipe=Fork('\\n','\\n',false)Find_/_Replace({'option':'Simple string','string':'$HEX['},'',true,false,true,false)Find_/_Replace({'option':'Simple string','string':']'},'',true,false,true,false)From_Hex('None')
 ```
+
+# Decode Decimal passwords (e.g., ms-Mcs-AdmPwd)
+```
+#recipe=From_Decimal('Space',false)&input=ODAgOTcgMTE1IDExNSAxMTkgMTExIDExNCAxMDAgNDkgNTAgNTE
+```
+
