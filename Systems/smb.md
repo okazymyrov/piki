@@ -11,8 +11,10 @@ smbclient -L <ip>
 smbclient //<ip>/<share>
 ```
 
-### Windows
+### Using Administrator
+```sh
 smbclient -U Administrator \\\\10.129.67.254\\C$
+```
 
 ## Samba share enumerator
 ```sh
