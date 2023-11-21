@@ -1,4 +1,4 @@
-![image](https://github.com/okazymyrov/piki/assets/1721372/b58b28eb-aefb-4707-84fb-5e7591f0728a)# User password to NTLM
+# User password to NTLM
 
 ```
 #recipe=Encode_text('UTF-16LE%20(1200)')MD4()
