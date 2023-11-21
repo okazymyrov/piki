@@ -51,7 +51,7 @@ aws ec2 get-password-data --instance-id ${ii} | jq .PasswordData
 #recipe=Fork('\\n','\\n',false)Find_/_Replace({'option':'Simple string','string':'$HEX['},'',true,false,true,false)Find_/_Replace({'option':'Simple string','string':']'},'',true,false,true,false)From_Hex('None')
 ```
 
-# Decode Decimal passwords (e.g., ms-Mcs-AdmPwd)
+# Decode decimal passwords (e.g., ms-Mcs-AdmPwd)
 ```
 #recipe=From_Decimal('Space',false)&input=ODAgOTcgMTE1IDExNSAxMTkgMTExIDExNCAxMDAgNDkgNTAgNTE
 ```
