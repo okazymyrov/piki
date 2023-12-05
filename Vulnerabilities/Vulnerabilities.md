@@ -8,11 +8,30 @@
  
 ## Timeline
 
-2022-06-14: Report created
+<!--
 
-2022-06-16: Status changed from New to Review / Repro  
+```mermaid
+ info
+```
 
-2022-06-30: Complete (Rejected / Won't fix)
+Tested on v10.6.1
+
+```mermaid
+%%{init: { 'theme': 'base', 'gitGraph': {'mainBranchName':"okazymyrov"}}}%%
+    gitGraph TB:
+	commit id: "2022-06-14" tag: "Report created"
+    	branch Microsoft
+	commit id: "2022-06-16" tag: "Status changed from New to Review / Repro"
+	commit id: "2022-06-30" tag: "Complete (Rejected / Won't fix)"
+```
+
+-->
+
+| Date | Status|
+| --- | --- |
+| 2022-06-14| Report created |
+| 2022-06-16| Status changed from New to Review / Repro |
+| 2022-06-30| Complete (Rejected / Won't fix) |
 
 ## Steps to reproduce:
 1.	Go to https://developer.microsoft.com/en-us/graph/graph-explorer
@@ -28,17 +47,41 @@
 
 ## Timeline
 
-2023-11-21: Report created
+<!--
 
-2023-11-23: Status changed from New to Review / Repro
+```mermaid
+ info
+```
 
-2023-11-28: Questions from Microsoft
+Tested on v10.6.1
 
-2023-11-29: Reproduction
+```mermaid
+%%{init: { 'theme': 'base', 'gitGraph': {'mainBranchName':"okazymyrov"}}}%%
+    gitGraph TB:
+	commit id: "2023-11-21" tag: "Report created"
+    branch Microsoft
+    checkout Microsoft
+	commit id: "2023-11-23" tag: "Status changed from New to Review / Repro"
+	commit id: "2023-11-28" tag: "Questions from Microsoft"
+    checkout okazymyrov
+    merge Microsoft
+	commit id: "2023-11-29" tag: "Reproduction"
+    commit id: "2023-11-30" tag: "Answers to Microsoft"
+    checkout Microsoft
+    merge okazymyrov
+	commit id: "2023-12-04" tag: "Complete (Rejected / By design)"
+```
 
-2023-11-30: Answers to Microsoft
+-->
 
-2023-12-04: Complete (Rejected / By design)
+| Date | Status|
+| --- | --- |
+| 2023-11-21| Report created |
+| 2023-11-23| Status changed from New to Review / Repro |
+| 2023-11-29| Questions from Microsoft |
+| 2023-11-28| Reproduction in the test environment |
+| 2023-11-30| Answers to Microsoft |
+| 2023-12-04| Complete (Rejected / By design) |
 
 ## Summary
 When using Microsoft Remote Desktop in the browser, the multi-factor authentication (MFA) is only applied to the web app (the client), not to the remote desktop session. This means that an attacker who accesses a shared Azure Virtual Desktop (AVD) with multiple sessions can switch to other users in the browser without MFA verification.
