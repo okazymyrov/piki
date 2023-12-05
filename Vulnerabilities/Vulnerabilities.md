@@ -2,6 +2,17 @@
 
 ## Answer from Microsoft (VULN-069036 / MSRC Case 72610 CRM:0022004898):
 > We determined that a specific fix will not be released for the reported behavior.
+> However, we do have an option you can opt-into, which:
+> - Reduces download URL to 15 minutes when there is an IP change 
+> - Download URL is instantly blocked if SPO IP policy is set, and request comes from outside of IP range
+ 
+## Timeline
+
+2022-06-14: Report created
+
+2022-06-16: Status changed from New to Review / Repro  
+
+2022-06-30: Complete (Rejected / Won't fix)
 
 ## Steps to reproduce:
 1.	Go to https://developer.microsoft.com/en-us/graph/graph-explorer
@@ -15,6 +26,19 @@
 ## Answer from Microsoft (VULN-113950 / MSRC Case 83840 CRM:0022036283):
 > Thank you again for submitting this issue to Microsoft. We determined that this behavior is considered to be by design because SSO is not enabled on the server and one has to enable AAD SSO https://learn.microsoft.com/en-us/azure/virtual-desktop/configure-single-sign-on if they want to get MFA to work.
 
+## Timeline
+
+2023-11-21: Report created
+
+2023-11-23: Status changed from New to Review / Repro
+
+2023-11-28: Questions from Microsoft
+
+2023-11-29: Reproduction
+
+2023-11-30: Answers to Microsoft
+
+2023-12-04: Complete (Rejected / By design)
 
 ## Summary
 When using Microsoft Remote Desktop in the browser, the multi-factor authentication (MFA) is only applied to the web app (the client), not to the remote desktop session. This means that an attacker who accesses a shared Azure Virtual Desktop (AVD) with multiple sessions can switch to other users in the browser without MFA verification.
