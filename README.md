@@ -85,7 +85,7 @@
 
 - [Vulnerabilities](/Vulnerabilities/Vulnerabilities.md)
   - [OneDrive for Business: Bypass "Anyone with the link" restriction](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#onedrive-for-business-bypass-anyone-with-the-link-restriction)
-  - 
+  - [MFA bypass in multi-session AVD](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#mfa-bypass-in-multi-session-avd)
 
 - References
   - [Cobalt Strike Red Team Ops - Training Course](https://www.youtube.com/playlist?list=PLcjpg2ik7YT6H5l9Jx-1ooRYpfvznAInJ)
