@@ -43,9 +43,9 @@ Some of our applications are accessible to guest users who need to connect to an
 #### A kill chain from a real engagement:
 * Compromize an account from 3rd party vendor (i.e., User 1) having access to the Contoso tenant.
 * Collect a list of valid passwords for users in Contoso (i.e., for User 2 and User 3).
-* Obtain a valid session for User 1 with MFA satisfied ([reproducible step 1]([url](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#steps))).
-* Open Edge ([reproducible step 2]([url](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#steps))).
-* When prompted for credentials, use User 2 login and password (no MFA required) ([reproducible step 3]([url](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#steps))).
+* Obtain a valid session for User 1 with MFA satisfied ([reproducible step 1](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#steps)).
+* Open Edge ([reproducible step 2](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#steps)).
+* When prompted for credentials, use User 2 login and password (no MFA required) ([reproducible step 3](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#steps)).
 * Open the task manager (i.e., using the application escape technique) to monitor users logged into the shared AVD.
 * During lunch (higher chance of having browsers open and a valid token with MFA satisfied), login as a different user via RDP shadowing using User 3's credentials (alternatively right clicki in the task manager on the user and then connect).
 * If the user has recently authenticated to the Contoso tenant using MFA (i.e., the MFA requirement is contained in the token), update that user's security information to include an attacker-controlled security factor (such as TOTP).
