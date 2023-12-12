@@ -74,6 +74,7 @@
   - [msfvenom.md](/Tools/msfvenom.md)
   - [mstsc.md](/Tools/mstsc.md)
   - [nc.md](/Tools/nc.md)
+  - [nmap.md](/Tools/nmap.md)
   - [pcap.md](/Tools/pcap.md)
   - [psexec.md](/Tools/psexec.md)
   - [responder.md](/Tools/responder.md)
