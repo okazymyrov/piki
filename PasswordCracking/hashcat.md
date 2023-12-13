@@ -25,7 +25,7 @@ hashcat --session=md5 -m0 -a 0 [path to hashes] /usr/share/wordlists/rockyou.txt
 
 # Restore a session
 ```sh
-hashcat --session=<name> --restore
+hashcat --session=[name] --restore
 ```
 
 # Show username, hash and password
