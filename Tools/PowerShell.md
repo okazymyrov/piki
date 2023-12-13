@@ -221,7 +221,8 @@ Get-ADPrincipalKerberosTokenGroup <username>
 ```
 
 # Run as SYSTEM
-⚠️ All commands requires **Administrator Privilege**. 
+> [!WARNING]
+> All commands requires **Administrator Privilege**. 
 ## [PowerRunAsSystem](https://github.com/DarkCoderSc/PowerRunAsSystem)
 
 ### Create a new PowerShell instance running under the context of ```NT AUTHORITY/SYSTEM```
