@@ -3,11 +3,6 @@
 - [OneRuleToRuleThemStill](https://github.com/stealthsploit/OneRuleToRuleThemStill)
 - [password_cracking_rule (replaced by OneRuleToRuleThemStill)](https://github.com/NotSoSecure/password_cracking_rules)
 
-# Show system/evironment/backend API info
-```sh
-hashcat -I
-```
-
 # Kerberoasting
 ```sh
 hashcat --session=kerb -m13100 -a0 [path to hashes] /usr/share/wordlists/rockyou.txt
@@ -54,4 +49,21 @@ hashcat --session=<name> --restore
 ```sh
 # NTLM
 hashcat -m1000 [path to hashes] --username --show
+```
+
+# System configuration
+
+## Show system/evironment/backend API info
+```sh
+hashcat -I
+```
+
+## Manual compilation to support GPU
+```sh
+git clone https://github.com/hashcat/hashcat.git
+mkdir -p hashcat/deps
+git clone https://github.com/KhronosGroup/OpenCL-Headers.git hashcat/deps/OpenCL
+cd hashcat/ && make
+./hashcat --version
+./hashcat -b -d [1] -m 1000
 ```
