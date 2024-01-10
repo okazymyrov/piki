@@ -3,6 +3,11 @@
 - [OneRuleToRuleThemStill](https://github.com/stealthsploit/OneRuleToRuleThemStill)
 - [password_cracking_rule (replaced by OneRuleToRuleThemStill)](https://github.com/NotSoSecure/password_cracking_rules)
 
+# Show system/evironment/backend API info
+```sh
+hashcat -I
+```
+
 # Kerberoasting
 ```sh
 hashcat --session=kerb -m13100 -a0 [path to hashes] /usr/share/wordlists/rockyou.txt
