@@ -6,9 +6,8 @@ iw dev wlan0 set monitor control
 ip link set wlan0 up
 ```
 
-## Adding a new interface may resolve some errors.
-> [!NOTE]  
-> [Capturing Wireless LAN Packets in Monitor Mode with iw](https://sandilands.info/sgordon/capturing-wifi-in-monitor-mode-with-iw)
+> [!TIP]  
+> Adding a new interface may resolve some errors ([Capturing Wireless LAN Packets in Monitor Mode with iw](https://sandilands.info/sgordon/capturing-wifi-in-monitor-mode-with-iw)).
 ```sh
 iw phy phy0 interface add mon0 type monitor
 iw dev wlan0 del
