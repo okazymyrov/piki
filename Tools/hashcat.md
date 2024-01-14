@@ -2,6 +2,7 @@
 - [WEAKPASS](https://weakpass.com/)
 - [OneRuleToRuleThemStill.rule](https://github.com/stealthsploit/OneRuleToRuleThemStill)
 - [OneRuleToRuleThemAll.rule (replaced by OneRuleToRuleThemStill)](https://github.com/NotSoSecure/password_cracking_rules)
+- [Norwegian dictionary (from 90's)](https://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/nlp/corpora/ota/)
 
 # Kerberoasting
 ```sh
