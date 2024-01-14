@@ -58,7 +58,7 @@ hashcat -m1000 [path to hashes] --username --show
 hashcat -I
 ```
 
-## Manual compilation to support GPU
+## Manual compilation to support GPU on macOS
 ```sh
 git clone https://github.com/hashcat/hashcat.git
 mkdir -p hashcat/deps
