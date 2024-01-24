@@ -196,6 +196,12 @@ powershell -NonInteractive -Command Add-MpPreference -ExclusionProcess "java.exe
 ```
 
 # Checks if the current Powershell instance is running with elevated privileges
+## Option 1
+```powershell
+# https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui
+(New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+```
+## Option 2
 ```powershell
 function IsAdmin {
     try {
