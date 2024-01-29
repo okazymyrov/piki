@@ -42,6 +42,11 @@ Tested on v10.6.1
 
 # OneDrive for Business: Bypass "Anyone with the link" restriction using user interface
 
+## Answer from Microsoft (VULN-094764 / MSRC Case 77791):
+> ... <br>
+> Thank you again for your report and your patience! <br>
+> ...
+
 ## Timeline
 | Date | Status|
 | --- | --- |
