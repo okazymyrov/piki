@@ -126,7 +126,7 @@ Some of our applications are accessible to guest users who need to connect to an
 ### Prerequisites
 * The adversary can log on as User 1 (including MFA)
 * Multi-session AVD is enabled for User 1, User 2 and User 3 in the same tenant
-* The adversary knows passwords for User 2 and User 3 (no MFA)
+* The adversary knows passwords for User 2 and User 3 (not MFA)
 
 ### Steps
 1. Log on AVD as User 1
