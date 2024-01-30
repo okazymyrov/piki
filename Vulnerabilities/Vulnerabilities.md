@@ -147,5 +147,5 @@ Some of our applications are accessible to guest users who need to connect to an
 * Open Edge ([reproducible step 2](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#steps)).
 * When prompted for credentials, use User 2 login and password (no MFA required) ([reproducible step 3](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#steps)).
 * Open the task manager (i.e., using the application escape technique) to monitor users logged into the shared AVD.
-* During lunch (higher chance of having browsers open and a valid token with MFA satisfied), login as a different user via RDP shadowing using User 3's credentials (alternatively right clicki in the task manager on the user and then connect).
+* During lunch (higher chance of having browsers open and a valid token with MFA satisfied), login as a different user via RDP shadowing using User 3's credentials (alternatively right click in the task manager on the user and then connect).
 * If the user has recently authenticated to the Contoso tenant using MFA (i.e., the MFA requirement is contained in the token), update that user's security information to include an attacker-controlled security factor (such as TOTP).
