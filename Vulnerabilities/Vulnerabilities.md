@@ -73,7 +73,7 @@ Bypass "Anyone with the link" can be done using user interface (without access t
 * To download the latest file one can replace with the same file to increase the version
 * JWT is valid for 1 day.
 
-# MFA bypass in multi-session AVD
+# Bypass MFA authorization in multi-session AVD
 
 ## Answer from Microsoft (VULN-113950 / MSRC Case 83840 CRM:0022036283):
 > Thank you again for submitting this issue to Microsoft. We determined that this behavior is considered to be by design because SSO is not enabled on the server and one has to enable AAD SSO https://learn.microsoft.com/en-us/azure/virtual-desktop/configure-single-sign-on if they want to get MFA to work.
