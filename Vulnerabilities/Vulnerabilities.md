@@ -120,7 +120,7 @@ Tested on v10.6.1
 When using Microsoft Remote Desktop in the browser, the multi-factor authentication (MFA) is only applied to the web app (the client), not to the remote desktop session. This means that an attacker who accesses a shared Azure Virtual Desktop (AVD) with multiple sessions can switch to other users in the browser without MFA verification.
 
 ## Description
-Some of our applications are accessible to guest users who need to connect to an internal system through a multi-session (hereinafter referred to as shared) Azure Virtual Desktop (AVD). This poses a security risk because an attacker who gains access to the tenant as user with the shared AVD can impersonate other users in the browser without having to pass multi-factor authentication (MFA).
+On occasions, applications are open to guest users requiring connection to an internal system via a multi-session, commonly referred to as a shared, Azure Virtual Desktop (AVD). This introduces a security concern, as an unauthorized individual gaining entry to the tenant through a user with shared AVD privileges can impersonate other users in the browser without undergoing multi-factor authentication (MFA).
 
 ## Steps to Reproduce
 ### Prerequisites
