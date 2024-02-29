@@ -9,6 +9,11 @@
 hashcat --session=kerb -m13100 -a0 [path to hashes] /usr/share/wordlists/rockyou.txt
 ```
 
+# AS-REP Roasting 
+```sh
+hashcat --session=kerb -m18200 -a0 [path to hashes] /usr/share/wordlists/rockyou.txt
+```
+
 # NTLM
 ```sh
 hashcat --session=ntlm -m1000 -a0 [path to hashes] /usr/share/wordlists/rockyou.txt -r OneRuleToRuleThemStill.rule
@@ -16,12 +21,12 @@ hashcat --session=ntlm -m1000 -a0 [path to hashes] /usr/share/wordlists/rockyou.
 
 # NTLMv2
 ```sh
-hashcat --session=ntlmv2 -m 5600 -a 0 [path to hashes] /usr/share/wordlists/rockyou.txt 
+hashcat --session=ntlmv2 -m5600 -a0 [path to hashes] /usr/share/wordlists/rockyou.txt 
 ```
 
 # MD5
 ```sh
-hashcat --session=md5 -m 0 -a 0 [path to hashes] /usr/share/wordlists/rockyou.txt 
+hashcat --session=md5 -m0 -a0 [path to hashes] /usr/share/wordlists/rockyou.txt 
 ```
 
 # PDF
