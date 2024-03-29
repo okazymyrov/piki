@@ -56,7 +56,7 @@ aws ec2 get-password-data --instance-id ${ii} | jq .PasswordData
 #recipe=From_Decimal('Space',false)
 ```
 
-# Parse/convert Base64 encoded certificate
+# Parse/convert an Base64 encoded certificate to PEM format
 > [!NOTE]
 > An example of certificate (i.e., "x5c") can be found on https://login.windows.net/common/discovery/keys
 ```
@@ -66,6 +66,11 @@ aws ec2 get-password-data --instance-id ${ii} | jq .PasswordData
 # Represent the RSA modulus from an x.509 certificate in decimal format
 ```
 #recipe=Parse_X.509_certificate('PEM')Regular_expression('User%20defined','Modulus((?::%5C%5Cs*%5B0-9a-f%5D%7B2%7D)*)',true,true,false,false,false,false,'List%20capture%20groups')Find_/_Replace(%7B'option':'Regex','string':'%5B:%5C%5Cs%5D'%7D,'',true,false,true,false)From_Base(16)
+```
+
+# Represent the RSA modulus from an Base64 encoded certificate in decimal format
+```
+#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)To_Hex('Space',0)Hex_to_PEM('CERTIFICATE')Parse_X.509_certificate('PEM')Regular_expression('User defined','Modulus((?::\\s*[0-9a-f]{2})*)',true,true,false,false,false,false,'List capture groups')Find_/_Replace({'option':'Regex','string':'[:\\s]'},'',true,false,true,false)From_Base(16)
 ```
 
 # Represent an Base64 encoded RSA modulus in decimal format
