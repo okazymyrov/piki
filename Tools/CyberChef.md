@@ -53,6 +53,10 @@ aws ec2 get-password-data --instance-id ${ii} | jq .PasswordData
 
 # Decode decimal passwords (e.g., ms-Mcs-AdmPwd)
 ```
-#recipe=From_Decimal('Space',false)&input=ODAgOTcgMTE1IDExNSAxMTkgMTExIDExNCAxMDAgNDkgNTAgNTE
+#recipe=From_Decimal('Space',false)
 ```
 
+# Represents the RSA modulus from an x.509 certificate in decimal format
+```
+#recipe=Parse_X.509_certificate('PEM')Regular_expression('User%20defined','Modulus((?::%5C%5Cs*%5B0-9a-f%5D%7B2%7D)*)',true,true,false,false,false,false,'List%20capture%20groups')Find_/_Replace(%7B'option':'Regex','string':'%5B:%5C%5Cs%5D'%7D,'',true,false,true,false)From_Base(16)
+```
