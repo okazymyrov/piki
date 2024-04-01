@@ -177,17 +177,27 @@ New-PSSession -Credential $Cred -ComputerName <computer>.<domain.local>
 
 # Manage Microsoft Defender for Endpoint
 
-- [Add-MpPreference](https://learn.microsoft.com/en-us/powershell/module/defender/add-mppreference)
+## [Add-MpPreference](https://learn.microsoft.com/en-us/powershell/module/defender/add-mppreference)
 
-## Get information about current settings
+### Get information about current settings
 ```powershell
 powershell -NonInteractive -Command Get-MpPreference
 ```
 
-## Add exclusions (require administrative rights)
+### Add exclusions (require administrative rights)
 ```powershell
 powershell -NonInteractive -Command Add-MpPreference -ExclusionPath "C:\tmp"
 powershell -NonInteractive -Command Add-MpPreference -ExclusionProcess "java.exe"
+```
+
+## Disable Microsoft Defender
+```powershell
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
+```
+
+## Check the state of Microsoft Defender
+```powershell
+Get-MpComputerStatus | select AMRunningMode
 ```
 
 # Convert Base64 encoded string to hex
