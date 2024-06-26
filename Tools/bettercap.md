@@ -2,7 +2,6 @@
 
 > [!IMPORTANT]  
 > Please use [the native method](https://github.com/okazymyrov/piki/blob/master/Systems/Wi-Fi.md#set-a-wi-fi-card-into-monitor-mode) to enable monitore mode since airmon-ng may cause errors in bettercap.
-> to enable monitor mode as airmon-ng may cause errors in bettercap.
 
 ## References
 * [Bettercap - Wi-Fi](https://www.bettercap.org/modules/wifi/)
