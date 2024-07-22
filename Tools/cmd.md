@@ -18,8 +18,14 @@ conhost cmd.exe
 ```
 
 # Find files or directories
+
+# Find all files and directories
 ```batchfile
 dir "C:\Users\*.txt" /s
+```
+## Print only file names (no heading information or summary)
+```batchfile
+dir /s /b /o:gn "C:\Users\*.txt"
 ```
 
 # Merge two binary files
