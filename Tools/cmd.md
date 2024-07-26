@@ -55,3 +55,9 @@ qwinsta /server:[server]
 ```batchfile
 query user /server:[server]
 ```
+
+# Install Windows applications as current user
+```batchfile
+set __COMPAT_LAYER=RunAsInvoker
+start installer.exe
+```
