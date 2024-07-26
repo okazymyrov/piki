@@ -61,3 +61,8 @@ query user /server:[server]
 set __COMPAT_LAYER=RunAsInvoker
 start installer.exe
 ```
+
+# Find a listening port
+```batchfile
+netstat -aofn | findstr :10080
+```
