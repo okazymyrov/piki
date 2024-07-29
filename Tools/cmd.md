@@ -13,6 +13,10 @@ xcopy "C:\temp\" "\\[computer.domain.local]\" /E /H /C /I
 robocopy "C:\temp\" "\\[computer.domain.local]\temp\ /MIR"
 ```
 
+# Recursively delete a folder and everything inside it
+```batchfile
+rd /S /Q "C:\Users\[user]\Downloads\[folder]"
+```
 
 # Dump ntds.dit on a domain controller
 ```batchfile
