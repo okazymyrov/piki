@@ -3,7 +3,7 @@ The code is given in [SAS language](https://en.wikipedia.org/wiki/SAS_language) 
 
 # Find encrypted passwords on Windows
 ```sas
-* https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/p18zxcefav5k25n11ano9p2b71er.htm#n0rhf48ontv9nzn10ncxiwpshei8
+/* https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/p18zxcefav5k25n11ano9p2b71er.htm#n0rhf48ontv9nzn10ncxiwpshei8 */
 filename cmd pipe 'cd /d "E:\" && (for /r %f in (*) do @findstr /p /i /n /c:"{sas00" "%f" >nul && (echo %f && findstr /p /i /n /c:"{sas00" "%f"))';
 
 data _null_;
