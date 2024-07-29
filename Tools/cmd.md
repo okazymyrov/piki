@@ -81,3 +81,8 @@ start installer.exe
 ```batchfile
 netstat -aofn | findstr :10080
 ```
+
+# Run a command from remote share
+```batchfile
+start cmd /k "\\[computer.domain.local]\echo-server.exe"
+```
