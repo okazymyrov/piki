@@ -26,6 +26,19 @@ python -m SimpleHTTPServer 8000
 npx http-server -p 8000
 ```
 
+# A PowerShell Server to return the Authorization header
+```powershell
+$http = [System.Net.HttpListener]::new() 
+$http.Prefixes.Add("http://localhost:10080/")
+$http.Start()
+$context = $http.GetContext()
+write-host $context.Request.Headers.GetValues("Authorization")
+$buffer = [System.Text.Encoding]::UTF8.GetBytes($context.Request.Headers.GetValues("Authorization"))
+$context.Response.ContentLength64 = $buffer.Length
+$context.Response.OutputStream.Write($buffer, 0, $buffer.Length)
+$context.Response.OutputStream.Close()
+```
+
 # [Reverse VNC](https://blog.kennyjansson.com/2018/03/04/reverse-vnc-shell/)
 ## Server - Linux
 ```sh
