@@ -1,6 +1,11 @@
 # Copy files between systems
+## File
 ```batchfile
-xcopy "C:\Rubeus.exe" \\<computer>.<domain.local>\C$\Windows\system32\
+xcopy "C:\Rubeus.exe" "\\[computer.domain.local]\C$\Windows\system32\"
+```
+## Directory
+```batchfile
+xcopy "C:\temp\" "\\[computer.domain.local]\" /E /H /C /I
 ```
 
 # Dump ntds.dit on a domain controller
