@@ -4,9 +4,15 @@
 xcopy "C:\Rubeus.exe" "\\[computer.domain.local]\C$\Windows\system32\"
 ```
 ## Directory
+### xcopy
 ```batchfile
 xcopy "C:\temp\" "\\[computer.domain.local]\" /E /H /C /I
 ```
+### robocopy
+```batchfile
+robocopy "C:\temp\" "\\[computer.domain.local]\temp\ /MIR"
+```
+
 
 # Dump ntds.dit on a domain controller
 ```batchfile
