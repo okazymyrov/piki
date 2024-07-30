@@ -53,3 +53,10 @@ tvnserver.exe
 :: cmd /c tvnserver
 tvnserver.exe -controlapp -connect <linux_ip>:5500
 ```
+
+# [Golang Echo Server](https://github.com/ibihim/echo-server)
+```batchfile
+git clone https://github.com/ibihim/echo-server
+cd echo-server
+go build
+```
