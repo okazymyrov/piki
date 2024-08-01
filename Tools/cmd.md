@@ -49,6 +49,11 @@ dir "C:\Users\*.txt" /s
 dir /s /b /o:gn "C:\Users\*.txt"
 ```
 
+## List all files in the current directory and subdirectories, sorted by the last modified date in descending order
+```batchfile
+dir /O-D /S "C:\Users\"
+```
+
 # Merge two binary files
 ```batchfile
 copy /b cmd.exe+calc.exe new_cmd.exe
