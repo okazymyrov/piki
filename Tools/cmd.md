@@ -14,8 +14,14 @@ robocopy "C:\temp\" "\\[computer.domain.local]\temp\ /MIR"
 ```
 
 # Recursively delete a folder and everything inside it
+## rd
 ```batchfile
 rd /S /Q "C:\Users\[user]\Downloads\[folder]"
+```
+
+## robocopy
+```batchfile
+robocopy "C:\empty_folder\" "\\[computer.domain.local]\folder_to_delete\ /MIR"
 ```
 
 # Dump ntds.dit on a domain controller
