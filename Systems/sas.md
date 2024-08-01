@@ -1,9 +1,17 @@
 # Description
 The code is given in [SAS language](https://en.wikipedia.org/wiki/SAS_language) for the SAS system.
 
-# Find encrypted passwords on Windows
+# Find credentials on Windows
 ```sas
 /* https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/proc/p18zxcefav5k25n11ano9p2b71er.htm#n0rhf48ontv9nzn10ncxiwpshei8 */
+/*
+/c:"{sas00"
+/c:"pwencode"
+/c:"PWD"
+/c:"password"
+/c:"PuTTY-User-Key-File"
+/c:"PRIVATE KEY-----"
+*/
 filename cmd pipe 'cd /d "E:\" && (for /r %f in (*) do @findstr /p /i /n /c:"{sas00" "%f" >nul && (echo %f && findstr /p /i /n /c:"{sas00" "%f"))';
 
 data _null_;
