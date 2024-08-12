@@ -9,14 +9,14 @@ ip link set wlan0 up
 > [!TIP]  
 > Adding a new interface may resolve some errors ([Capturing Wireless LAN Packets in Monitor Mode with iw](https://sandilands.info/sgordon/capturing-wifi-in-monitor-mode-with-iw)).
 ```sh
-iw phy phy0 interface add mon0 type monitor
 iw dev wlan0 del
+iw phy phy0 interface add mon0 type monitor
 ip link set mon0 up
 ```
 
 # Monitor a specific ESSID
 ```sh
-airodump-ng --essid "<name>" --wps --band abg --manufacture --berlin 3600 -c64,100 -f 2000 -a wlan0
+airodump-ng -a --essid "[name]" --wps --band abg --manufacture --berlin 3600 -c64,100 -f 2000 [wlan0]
 ```
 
 # Manually capturing wireless LAN packets
