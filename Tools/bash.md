@@ -10,10 +10,15 @@ grep -xFf ./ntlm.txt ./pwned-passwords-ntlm-ordered-by-hash-v8.txt
 
 # Decode base64 encoded lines
 ```sh
-cat ./file.txt | xargs -L 1 -I {} printf "{}\nCg==" | base64 -d
+cat [file.txt] | xargs -L 1 -I {} printf "{}\nCg==" | base64 -d
 ```
 
 # Generate random hex
 ```sh
 dd if=/dev/urandom count=32 bs=1 | shasum -a 256
+```
+
+# Convert a binary file to the text declaring a C/C++ array
+```sh
+xxd -i [file]
 ```
