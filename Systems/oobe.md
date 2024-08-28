@@ -38,18 +38,17 @@ stateDiagram-v2
 
 ```
 
-## Option 1
+## Option 1 - [Collect logs](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/device-enrollment/understand-troubleshoot-esp#collect-logs)
+```
 SHIFT+F10
+```
 
-## Option 2 
-CTRL+SHIFT+ESC
-SHIFT+F10
-
-## Option 3
+## Option 2 - Blind command injection
 
 ### Bypass OOBE in Windows 10:
 ```
-CTRL+SHIFT+ESC -> ALT/WIN+TAB -> WIN+R -> cmd.exe -> SHIFT+ENTER -> net user u1 u1 /add
+CTRL+SHIFT+ESC -> ALT/WIN+TAB -> WIN+R -> cmd.exe -> SHIFT+ENTER
+net user u1 u1 /add
 net localgroup Administrators u1 /add
 ```
 
@@ -57,4 +56,9 @@ net localgroup Administrators u1 /add
 ```
 CTRL+SHIFT+ESC -> ALT+N -> net user u1 u1 /add -> TAB -> SPACE -> ENTER
 CTRL+SHIFT+ESC -> ALT+N -> net localgroup Administrators u1 /add -> TAB -> SPACE -> ENTER
+```
+
+### Option 3 - [Enter Audit mode on an image that's configured to boot to OOBE](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/boot-windows-to-audit-mode-or-oobe?view=windows-11#enter-audit-mode-on-an-image-thats-configured-to-boot-to-oobe)
+```sh
+CTRL+SHIFT+F3
 ```
