@@ -52,6 +52,7 @@
   - [Certify](/Tools/Certify.md)
   - [certbot](/Tools/certbot.md)
   - [CyberChef](/Tools/CyberChef.md)
+  - [DevConsole](/Tools/DevConsole.md)
   - [DonPAPI](/Tools/DonPAPI.md)
   - [Google Dorks for Bug Bounty](google-dorks-bug-bounty.md)
   - [PowerShell](/Tools/PowerShell.md)
