@@ -79,3 +79,10 @@ aws ec2 get-password-data --instance-id ${ii} | jq .PasswordData
 ```
 #recipe=From_Base64('A-Za-z0-9-_',true,false)To_Hex('None',0)From_Base(16)
 ```
+
+# Represent an Base64 encoded RSA modulus in decimal format
+> [!NOTE]
+> Input is in PEM format.
+```
+#recipe=Public_Key_from_Certificate()PEM_to_Hex()Parse_ASN.1_hex_string(0,100000)Regular_expression('User%20defined','%5C%5Cb(?:%5B0-9a-fA-F%5D%7B2%7D)%7B10,%7D%5C%5Cb%5Cn',true,true,false,false,false,false,'List%20matches')From_Base(16)
+```
