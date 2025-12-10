@@ -22,3 +22,8 @@ dd if=/dev/urandom count=32 bs=1 | shasum -a 256
 ```sh
 xxd -i [file]
 ```
+
+# Generate HMAC
+```sh
+DATE=$(date +%s); NAME="Oleksandr Kazymyrov"; RANDOM256=$(openssl rand -hex 256); KEY=$(openssl rand -hex 256); MESSAGE="$DATE|$NAME|$RANDOM256"; HMAC=$(printf "%s" "$MESSAGE" | openssl dgst -sha256 -hmac "$KEY" | awk '{print $2}'); echo -e "Date: $DATE\nName: $NAME\nRandom256: $RANDOM256\nKey: $KEY\nMessage: $MESSAGE\nHMAC: $HMAC"
+```
