@@ -25,5 +25,5 @@ xxd -i [file]
 
 # Generate HMAC
 ```sh
-DATE=$(date +%s); NAME="Oleksandr Kazymyrov"; RANDOM256=$(openssl rand -hex 32); KEY=$(openssl rand -hex 32); MESSAGE="$DATE|$NAME|$RANDOM256"; HMAC=$(printf "%s" "$MESSAGE" | openssl dgst -sha256 -hmac "$KEY" | awk '{print $2}'); echo -e "Date: $DATE\nName: $NAME\nRandom256: $RANDOM256\nKey: $KEY\nMessage: $MESSAGE\nHMAC: $HMAC"
+DATE=$(date +%s); NAME="Oleksandr Kazymyrov"; NONCE=$(openssl rand -hex 32); KEY=$(openssl rand -hex 32); MESSAGE="$DATE|$NAME|[message]|$RANDOM256"; HMAC=$(printf "%s" "$MESSAGE" | openssl dgst -sha256 -hmac "$KEY" | awk '{print $2}'); echo -e "Date: $DATE\nName: $NAME\nNONCE: $NONCE\nKey: $KEY\nMessage: $MESSAGE\nHMAC: $HMAC"
 ```
