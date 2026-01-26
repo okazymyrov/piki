@@ -27,3 +27,10 @@ xxd -i [file]
 ```sh
 INPUT="secret"; DATE=$(date +%s); NAME="Oleksandr Kazymyrov"; NONCE=$(openssl rand -hex 32); KEY=$(openssl rand -hex 32); MESSAGE="$DATE|$NAME|$INPUT|$NONCE"; HMAC=$(printf "%s" "$MESSAGE" | openssl dgst -sha256 -hmac "$KEY" | awk '{print $2}'); echo -e "Date: $DATE\nName: $NAME\nINPUT: $INPUT\nNonce: $NONCE\nKey: $KEY\nMessage: $MESSAGE\nHMAC: $HMAC\n\nVerification string:\nprintf \"%s\" \"$MESSAGE\" | openssl dgst -sha256 -hmac \"$KEY\""
 ```
+
+# PS1 on Kali
+```sh
+# ~/.zshrc
+export PS1="%F{%(#.blue.green)}┌──%F{yellow}(%D{%F %T})%F{%(#.blue.green)}-(%B%F{%(#.red.blue)}%n㉿%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]
+└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} "
+```
