@@ -89,9 +89,9 @@
   - [xfreerdp](/Tools/xfreerdp.md)
   - [ykman](/Tools/ykman.md)
 
-- [Vulnerabilities](/Vulnerabilities/Vulnerabilities.md)
-  - [OneDrive for Business: Bypass "Anyone with the link" restriction](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#onedrive-for-business-bypass-anyone-with-the-link-restriction)
-  - [MFA bypass in multi-session AVD](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#mfa-bypass-in-multi-session-avd)
+- [Vulnerabilities](/Vulnerabilities/)
+  - [OneDrive for Business: Bypass "Anyone with the link" restriction](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/OneDrive%20for%20Business%3A%20Bypass%20%22Anyone%20with%20the%20link%22%20restriction.md)
+  - [MFA bypass in multi-session AVD]([https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Vulnerabilities.md#mfa-bypass-in-multi-session-avd](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Bypass%20MFA%20authorization%20in%20multi-session%20AVD.md))
 
 - References
   - [Cobalt Strike Red Team Ops - Training Course](https://www.youtube.com/playlist?list=PLcjpg2ik7YT6H5l9Jx-1ooRYpfvznAInJ)
