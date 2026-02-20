@@ -25,7 +25,7 @@ xxd -i [file]
 
 # Generate HMAC
 ```sh
-INPUT="example.com"; DATE=$(date +%s); NAME="Oleksandr Kazymyrov"; NONCE=$(openssl rand -hex 32); KEY=$(openssl rand -hex 32); MESSAGE="$DATE|$NAME|$INPUT|$NONCE"; HMAC=$(printf "%s" "$MESSAGE" | openssl dgst -sha256 -hmac "$KEY" | awk '{print $2}'); echo -e "Date: $DATE\nName: $NAME\nINPUT: $INPUT\nNonce: $NONCE\nKey: $KEY\nMessage: $MESSAGE\nHMAC: $HMAC\n\nVerification string:\nprintf \"%s\" \"$MESSAGE\" | openssl dgst -sha256 -hmac \"$KEY\""
+INPUT="example.com"; DATE=$(date +%s); NAME="Oleksandr Kazymyrov"; NONCE=$(openssl rand -hex 32); KEY=$(openssl rand -hex 32); MESSAGE="$DATE|$NAME|$INPUT|$NONCE"; HMAC=$(printf "%s" "$MESSAGE" | openssl dgst -sha3-256 -hmac "$KEY" | awk '{print $2}'); echo -e "Date: $DATE\nName: $NAME\nINPUT: $INPUT\nNonce: $NONCE\nKey: $KEY\nMessage: $MESSAGE\nHMAC: $HMAC\n\nVerification string:\nprintf \"%s\" \"$MESSAGE\" | openssl dgst -sha3-256 -hmac \"$KEY\""
 ```
 
 # PS1 on Kali
