@@ -1,4 +1,4 @@
-# Azure DNS: Dangling NS Delegation Leading to Subdomain Takeover (NS Rotation)
+# Azure DNS: Dangling NS Delegation Leading to Subdomain Takeover
 
 ## Answer from Microsoft (VULN-167964 / MSRC Case 104484 CRM:0022115875)
 
