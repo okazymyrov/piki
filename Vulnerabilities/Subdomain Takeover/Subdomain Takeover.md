@@ -65,8 +65,8 @@ The following table summarizes where **Proof of Validation (PoV)** was performed
 | Amazon Route 53* | ❌ | ✅ |
 | Microsoft (Azure DNS) | ✅ | ✅ |
 | Google Cloud DNS | ✅ | ❌ |
-| DNSimple | ✅ | ❌ |
-| Imperva |  ❌ | ❌ |
+| DNSimple | ✅ | - |
+| Imperva |  ❌ | - |
 
 ### Notes
 
