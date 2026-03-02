@@ -1,4 +1,4 @@
-# Route 53: Dangling NS Delegation Leading to Subdomain Takeover
+# AWS Route 53: Dangling NS Delegation Leading to Subdomain Takeover
 
 ## Answer from AWS (Report #3461603 on HackerOne)
 
