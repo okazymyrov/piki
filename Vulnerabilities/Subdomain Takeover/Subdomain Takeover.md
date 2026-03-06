@@ -21,7 +21,7 @@ The table below summarizes the DNS providers that were tested for **Proof of Vul
 
 ## Understanding Dangling NS Records at the Subdomain Level
 
-**NS dangling** at the subdomain level occurs when a subdomain (e.g., `api.example.com` or `staging.example.com`) has NS records delegating DNS resolution to name servers that are no longer operational or authoritative for that subdomain. The delegation remains in the parent zone, but the corresponding zone at the DNS provider has been deleted or is no longer under the organization's control.
+**NS dangling** at the subdomain level occurs when DNS resolution for a subdomain (e.g., `api.example.com` or `staging.example.com`) is delegated to nameservers that are no longer operational or no longer authoritative for that subdomain. The delegation remains in the parent zone, but the corresponding DNS zone at the provider has been deleted or is no longer under the organization’s control.
 
 ### Key Difference from CNAME Takeover
 
