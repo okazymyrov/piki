@@ -11,4 +11,4 @@
 | 2025-12-09 | Report created (Issue Tracker: 467308576) |
 | 2025-12-09 | Initial triage response |
 | 2025-12-18 | Google response: Won’t Fix (Intended behavior) |
-| 2026-02-13 | Google silently fixed the reported vulnerability |
+| **2026-02-13** | **Google silently fixed the reported vulnerability** |
