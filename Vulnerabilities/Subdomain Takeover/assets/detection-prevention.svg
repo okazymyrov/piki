@@ -1,0 +1,115 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1100 700'>
+  <!-- OPTION 2: HEXAGON GRID — Each method/practice is a hexagon tile, grouped by category -->
+  <defs>
+    <filter id='sh' x='-5%' y='-5%' width='112%' height='115%'>
+      <feDropShadow dx='1' dy='2' stdDeviation='3' flood-opacity='0.10'/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <!-- <rect width='1100' height='700' fill='#fff'/> -->
+
+  <!-- ===== TOP ROW: DETECTION (Purple Hexagons) ===== -->
+
+  <!-- Hex 1: NS Validation -->
+  <g filter='url(#sh)' transform='translate(170, 230)'>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#FFFFFF' stroke='#4B0082' stroke-width='2'/>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#4B0082' opacity='0.04'/>
+    <circle cx='0' cy='-60' r='16' fill='#4B0082'/>
+    <text x='0' y='-55' text-anchor='middle' font-size='13' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#FFF'>1</text>
+    <text x='0' y='-19' text-anchor='middle' font-size='11' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#4B0082'>DNS Validation</text>
+    <text x='0' y='6' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Query NS records</text>
+    <text x='0' y='20' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Verify zone existence</text>
+    <text x='0' y='34' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Detect SERVFAIL / NXDOMAIN</text>
+    <text x='0' y='48' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Identify orphaned zones</text>
+  </g>
+
+  <!-- Hex 2: Inventory -->
+  <g filter='url(#sh)' transform='translate(400, 230)'>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#FFFFFF' stroke='#4B0082' stroke-width='2'/>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#4B0082' opacity='0.04'/>
+    <circle cx='0' cy='-60' r='16' fill='#4B0082'/>
+    <text x='0' y='-55' text-anchor='middle' font-size='13' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#FFF'>2</text>
+    <text x='0' y='-26' text-anchor='middle' font-size='11' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#4B0082'>Delegation</text>
+    <text x='0' y='-12' text-anchor='middle' font-size='11' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#4B0082'>Inventory</text>
+    <text x='0' y='6' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Track NS delegations</text>
+    <text x='0' y='20' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Map owners and DNS providers</text>
+    <text x='0' y='34' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Alert on deleted zones</text>
+    <text x='0' y='48' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>DNSSEC chain validation</text>
+  </g>
+
+  <!-- Hex 3: Threat Intel -->
+  <g filter='url(#sh)' transform='translate(285, 410)'>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#FFFFFF' stroke='#4B0082' stroke-width='2'/>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#4B0082' opacity='0.04'/>
+    <circle cx='0' cy='-60' r='16' fill='#4B0082'/>
+    <text x='0' y='-55' text-anchor='middle' font-size='13' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#FFF'>3</text>
+    <text x='0' y='-19' text-anchor='middle' font-size='11' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#4B0082'>Threat Signals</text>
+    <text x='0' y='6' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Passive DNS monitoring</text>
+    <text x='0' y='20' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Certificate Transparency logs</text>
+    <text x='0' y='34' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>External zone registration detection</text>
+    <text x='0' y='48' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Detect abnormal DNS queries</text>
+  </g>
+
+  <!-- ===== RIGHT SIDE: PREVENTION (Green Hexagons) ===== -->
+
+  <!-- Hex 4: Zone Lifecycle -->
+  <g filter='url(#sh)' transform='translate(700, 230)'>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#FFFFFF' stroke='#8C0032' stroke-width='2'/>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#8C0032' opacity='0.04'/>
+    <circle cx='0' cy='-60' r='16' fill='#8C0032'/>
+    <text x='0' y='-55' text-anchor='middle' font-size='13' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#FFF'>1</text>
+    <text x='0' y='-26' text-anchor='middle' font-size='11' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#8C0032'>DNS Zone Lifecycle</text>
+    <text x='0' y='-12' text-anchor='middle' font-size='11' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#8C0032'>Management</text>
+    <text x='0' y='6' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>NS only after zone is active</text>
+    <text x='0' y='20' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Remove NS before deleting zone</text>
+    <text x='0' y='34' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Automated cleanup of orphan zones</text>
+    <text x='0' y='48' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Maintain subdomain delegation register</text>
+  </g>
+
+  <!-- Hex 5: Access Control -->
+  <g filter='url(#sh)' transform='translate(930, 230)'>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#FFFFFF' stroke='#8C0032' stroke-width='2'/>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#8C0032' opacity='0.04'/>
+    <circle cx='0' cy='-60' r='16' fill='#8C0032'/>
+    <text x='0' y='-55' text-anchor='middle' font-size='13' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#FFF'>2</text>
+    <text x='0' y='-26' text-anchor='middle' font-size='11' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#8C0032'>Controlled DNS</text>
+    <text x='0' y='-12' text-anchor='middle' font-size='11' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#8C0032'>Migration</text>
+    <text x='0' y='6' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Formal DNS migration procedures</text>
+    <text x='0' y='20' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Parallel DNS provider testing</text>
+    <text x='0' y='34' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Delegation verification before cutover</text>
+    <text x='0' y='48' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Rollback procedures during migration</text>
+  </g>
+
+  <!-- Hex 6: Audits -->
+  <g filter='url(#sh)' transform='translate(815, 410)'>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#FFFFFF' stroke='#8C0032' stroke-width='2'/>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#8C0032' opacity='0.04'/>
+    <circle cx='0' cy='-60' r='16' fill='#8C0032'/>
+    <text x='0' y='-55' text-anchor='middle' font-size='13' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#FFF'>3</text>
+    <text x='0' y='-26' text-anchor='middle' font-size='11' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#8C0032'>DNS Auditing</text>
+    <text x='0' y='-12' text-anchor='middle' font-size='11' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#8C0032'>&amp; Monitoring</text>
+    <text x='0' y='6' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Continuous dangling NS detection</text>
+    <text x='0' y='20' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Scheduled DNS delegation scans</text>
+    <text x='0' y='34' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>Quarterly DNS ownership review</text>
+    <text x='0' y='48' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#6B7D8E'>End-to-end DNS resolution testing</text>
+  </g>
+
+  <!-- Category labels -->
+  <rect x='247' y='128' width='76' height='24' rx='12' fill='#4B0082' opacity='0.1'/>
+  <text x='285' y='144' text-anchor='middle' font-size='10' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#4B0082'>DETECT</text>
+  <rect x='771' y='128' width='88' height='24' rx='12' fill='#8C0032' opacity='0.1'/>
+  <text x='815' y='144' text-anchor='middle' font-size='10' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#8C0032'>PREVENT</text>
+
+  <!-- Hex 7: Key Principle (centre, between Threat Signals and DNS Auditing) -->
+  <g filter='url(#sh)' transform='translate(550, 410)'>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#FFF8F5' stroke='#B3541E' stroke-width='2.5'/>
+    <polygon points='0,-100 87,-50 87,50 0,100 -87,50 -87,-50' fill='#B3541E' opacity='0.06'/>
+    <circle cx='0' cy='-60' r='16' fill='#B3541E'/>
+    <text x='0' y='-60' dy='0.35em' text-anchor='middle' font-size='13' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#FFF'>★</text>
+    <text x='0' y='-18' text-anchor='middle' font-size='11' font-weight='bold' font-family='Storebrand Text, sans-serif' fill='#6B1D0E'>Key Principle</text>
+    <text x='0' y='8' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#5C3317'>Ensure 1:1 alignment between</text>
+    <text x='0' y='24' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#5C3317'>NS delegations and</text>
+    <text x='0' y='40' text-anchor='middle' font-size='9' font-family='Storebrand Text, sans-serif' fill='#5C3317'>active hosted zones</text>
+  </g>
+</svg>
