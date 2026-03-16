@@ -2,7 +2,7 @@
 
 ## Answer from Google (Issue Tracker: 467308576 / Cloud VRP)
 
->“Our team has analyzed this report and decided not to track it as a security bug. When we file a security vulnerability to product teams, we impose monitoring and escalation processes for teams to follow, and the security risk described in this report does not meet the threshold that we require for this type of escalation on behalf of the security team.
+>Our team has analyzed this report and decided not to track it as a security bug. When we file a security vulnerability to product teams, we impose monitoring and escalation processes for teams to follow, and the security risk described in this report does not meet the threshold that we require for this type of escalation on behalf of the security team.
 
 ## Timeline
 
