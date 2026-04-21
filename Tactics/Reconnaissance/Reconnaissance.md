@@ -1,9 +1,11 @@
-# Check a user in Microsoft tenant
+# Check if a domain exists in a Microsoft 365 tenant
 
 ## GET
 ```
-https://login.microsoftonline.com/getuserrealm.srf?login=[username]@[domain]&xml=1
+https://login.microsoftonline.com/getuserrealm.srf?login=[domain]&xml=1
 ```
+
+# Check a user in Microsoft tenant
 
 ## POST
 ```python
