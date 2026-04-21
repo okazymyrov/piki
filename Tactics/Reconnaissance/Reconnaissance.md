@@ -20,3 +20,5 @@ Invoke-MFASweep -Username <username> -Password <password> -Recon -IncludeADFS
 ```
 
 # [SpideFoot](https://github.com/smicallef/spiderfoot)
+
+# [TeamsEnum](https://github.com/lucidra-security/TeamsEnum)
