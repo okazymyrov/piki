@@ -24,7 +24,7 @@ Subcommands:
 
 Usage:
         python aws-domain-takeover.py --sub-command hunt-delegation-set --target-ns "ns-123.awsdns-01.com. ns-456.awsdns-02.net."
-        python aws-domain-takeover.py --sub-command takeover --parse-ns-from scan.baddns.log
+        python aws-domain-takeover.py --sub-command takeover --parse-ns-from scan.baddns.log --zone-name example.com
         python aws-domain-takeover.py --sub-command hunt-zone --zone-name example.com --parse-ns-from scan.baddns.log
         python aws-domain-takeover.py --sub-command delete-sets [--force]
         python aws-domain-takeover.py --sub-command parse-baddns --file baddns.log
