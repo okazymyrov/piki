@@ -53,3 +53,15 @@ This feature is key to the takeover attack: instead of creating hosted zones rep
 6. **Actions on objectives.** Add DNS records (A, MX, TXT, etc.) to achieve traffic interception, identity compromise, or cross-environment pivoting.
 
 ![Route 53 Exploitation Flow](https://raw.githubusercontent.com/okazymyrov/piki/master/Vulnerabilities/Subdomain%20Takeover/assets/route53-exploitation.svg)
+
+### Automating AWS Route 53 Subdomain Takeovers
+
+Manually creating hosted zones and testing delegation matching in AWS Route 53 can quickly become repetitive and time-consuming, especially when working with large lists of potentially vulnerable domains. To simplify the process, the following automation script was created [aws-domain-takeover.py](https://github.com/okazymyrov/piki/blob/master/Vulnerabilities/Subdomain%20Takeover/scripts/aws/aws-domain-takeover.py).
+
+The script is designed to automate the workflow of identifying and validating potential AWS Route 53 subdomain takeover opportunities directly from `baddns` scan results.
+
+The script should be executed from **AWS CloudShell** using the following command:
+
+```bash
+python aws-domain-takeover.py takeover --parse-ns-from scan.baddns.log
+```
