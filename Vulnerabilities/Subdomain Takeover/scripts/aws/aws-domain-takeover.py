@@ -16,21 +16,21 @@ High-level workflow (automated with the 'takeover' subcommand):
 Subcommands:
     hunt-delegation-set  Find the first reusable delegation set matching target NS
                                              (no zone creation — use 'takeover' for that).
-    takeover             Full 6-step workflow: hunt delegation set, create hosted
+    takeover             Full workflow: hunt delegation set, create hosted
                                              zone on match, conditional cleanup.
-    hunt-zone            Hunt target NS by creating hosted zones ($0.50 each).
+    hunt-zone            Hunt target NS by creating hosted zones.
     delete-sets          List / delete all reusable delegation sets in the account.
     parse-baddns         Parse baddns scanner output and extract vulnerable targets.
 
 Usage:
         python aws-domain-takeover.py --sub-command hunt-delegation-set --target-ns "ns-123.awsdns-01.com. ns-456.awsdns-02.net."
-        python aws-domain-takeover.py --sub-command takeover --parse-ns-from scan.baddns.log --zone-name example.com
+        python aws-domain-takeover.py --sub-command takeover --parse-ns-from scan.baddns.log
         python aws-domain-takeover.py --sub-command hunt-zone --zone-name example.com --parse-ns-from scan.baddns.log
         python aws-domain-takeover.py --sub-command delete-sets [--force]
         python aws-domain-takeover.py --sub-command parse-baddns --file baddns.log
 
         # Positional subcommand syntax is also supported:
-        python aws-domain-takeover.py takeover --parse-ns-from scan.baddns.log --zone-name example.com
+        python aws-domain-takeover.py takeover --parse-ns-from scan.baddns.log
 
 Author: Oleksandr Kazymyrov
 """
