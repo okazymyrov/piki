@@ -53,3 +53,11 @@ dhclient wlan0
 ```sh
 ip link set wlan0 down; ip link set dev wlan0 address [hijacked MAC]; ip link set wlan0 up; dhclient wlan0
 ```
+
+# Wi-Fi Hotspot
+```sh
+nmcli device wifi hotspot \
+    ifname [wlan1] \
+    ssid [ssid] \
+    password [password]
+```
