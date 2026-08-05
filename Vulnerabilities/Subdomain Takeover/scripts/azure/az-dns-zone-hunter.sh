@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Run with
-# echo "" > ./az-dns-zone-hunter.sh && nano ./az-dns-zone-hunter.sh && chmod +x ./az-dns-zone-hunter.sh && ./az-dns-zone-hunter.sh -z [zone] -ns [ns1-09.azure-dns.com] -p [dns-ns-test] -s "e09d32ee-ae58-41e9-8209-b3c44ed3b095"
+# echo "" > ./az-dns-zone-hunter.sh && nano ./az-dns-zone-hunter.sh && chmod +x ./az-dns-zone-hunter.sh && ./az-dns-zone-hunter.sh -z [zone] -ns [ns1-09.azure-dns.com] -p [dns-ns-test] -s [e09d32ee-ae58-41e9-8209-b3c44ed3b095]
 
 ##############################################
 # COLORS
