@@ -91,6 +91,16 @@ def is_subdomain(host: str, root: str) -> bool:
     return host.endswith("." + root)
 
 
+def is_cache_fresh(filepath: str, max_age_hours: float) -> bool:
+    """Return True if filepath exists and its mtime is within max_age_hours of now."""
+    try:
+        mtime = os.path.getmtime(filepath)
+    except OSError:
+        return False
+    age_hours = (time.time() - mtime) / 3600.0
+    return age_hours <= max_age_hours
+
+
 def extract_hosts(result: dict) -> set[str]:
     hosts = set()
 
@@ -416,6 +426,10 @@ def main():
     scan_grp.add_argument("--size", type=int, default=10000, help="Results per page (default: 10000)")
     scan_grp.add_argument("--max-pages", type=int, help="Limit number of pages per domain")
     scan_grp.add_argument("--sleep", type=float, default=0.2, help="Sleep between requests (seconds)")
+    scan_grp.add_argument("--cache-max-age-hours", type=float, default=24,
+                           help="Skip re-fetching a domain if its output file is newer than this many hours (default: 24)")
+    scan_grp.add_argument("--no-cache", action="store_true",
+                           help="Disable cache; always fetch from the API regardless of existing output file age")
     scan_grp.add_argument("--debug", action="store_true", help="Enable debug logging (show all commands)")
 
     # BadDNS group
@@ -489,8 +503,29 @@ def main():
     all_subdomains: set[str] = set()
     generated_files: list[str] = []
     total = len(roots)
+    cached_count = 0
+    fetched_count = 0
 
     for idx, root in enumerate(roots, 1):
+        filepath = os.path.join(output_dir, f"{root}.txt")
+        use_cache = (not args.no_cache) and is_cache_fresh(filepath, args.cache_max_age_hours)
+
+        if use_cache:
+            print(f"[{idx}/{total}] {root} ... cached (age < {args.cache_max_age_hours}h), skipping fetch")
+            try:
+                cached_subs = set(load_domains_from_text(filepath))
+            except Exception as e:
+                print(f"  WARNING: cache read failed ({e}), falling back to fetch", file=sys.stderr)
+            else:
+                cached_count += 1
+                if cached_subs:
+                    print(f"  → Loaded {len(cached_subs)} subdomain(s) from cache")
+                    all_subdomains.update(cached_subs)
+                    generated_files.append(filepath)
+                else:
+                    print("  → Cached file is empty (0 subdomains previously)")
+                continue
+
         print(f"[{idx}/{total}] Querying: {root} ...", end=" ", flush=True)
         try:
             subs = query_domain(
@@ -505,6 +540,7 @@ def main():
             print(f"ERROR: {e}", file=sys.stderr)
             continue
 
+        fetched_count += 1
         print(f"found {len(subs)} subdomain(s)")
 
         if subs:
@@ -513,15 +549,17 @@ def main():
             all_subdomains.update(subs)
             generated_files.append(filepath)
 
+    print(f"\nDomains processed: {total} total — {fetched_count} fetched, {cached_count} served from cache")
+
     if all_subdomains:
         combined_path = os.path.join(output_dir, "all_subdomains.txt")
         with open(combined_path, "w", encoding="utf-8", newline="") as f:
             for sub in sorted(all_subdomains):
                 f.write(sub + "\n")
-        print(f"\nTotal unique subdomains: {len(all_subdomains)}")
+        print(f"Total unique subdomains: {len(all_subdomains)}")
         print(f"Combined file: {combined_path}")
     else:
-        print("\nNo subdomains found across any domain.")
+        print("No subdomains found across any domain.")
 
     if not args.skip_baddns and generated_files:
         run_baddns_batch(
